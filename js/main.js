@@ -1,4 +1,8 @@
 import { Reaction } from "./model.js";
+var selections = [
+  document.getElementById("firstReaction"),
+  document.getElementById("secondReaction"),
+];
 
 var water = new Reaction(
   "Water",
@@ -14,6 +18,6 @@ var blizzard = new Reaction(
   ["Snowbot", "Explosion"]
 );
 
-console.log(blizzard);
-
-function generateReaction(element1, element2) {}
+selections.forEach(e => e.addEventListener("change", () => {
+    document.getElementById("resultReaction").innerText = e.value;
+}))
