@@ -7,7 +7,7 @@ In this game you have differents reactions to beat your opponents, and you are p
 In order to fight you need to combine four main elements in pairs: ❄️ (Ice), 🔥 (Fire), 🍃 (Wind), and ⚙️ (Machine). In this way, you can generate a total of six different reactions. These are:
 
 <ul>
-    <li>🔥 + ❄️ = 💧 (Water)<li>
+    <li>🔥 + ❄️ = 💧 (Water)</li>
     <li>🔥 + 🍃 = ♨💨 (Heat Wave)</li>
     <li>🔥 + ⚙️ = 💥 (Explosion)</li>
     <li>❄️ + ⚙️ = ☃️🤖 (Snowbot)</li>
