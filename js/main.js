@@ -5,6 +5,8 @@ let selections = [
   document.getElementById("secondReaction"),
 ];
 
+let elements = ["Fire", "Ice", "Wind", "Machine"];
+
 let reactions = [
   new Reaction(
     "Water",
@@ -66,3 +68,16 @@ selections.forEach((e) =>
     );
   })
 );
+
+selections[0].addEventListener("change", () => {
+    selections[1].removeAttribute("disabled");
+    selections[1].innerHTML = "";
+    elements.forEach((e) => {
+        if(selections[0].options[selections[0].selectedIndex].value != e){
+            let option = document.createElement("option");
+            option.innerText = e;
+            option.value = e;
+            document.getElementById(selections[1].appendChild(option));
+        }
+    })
+})
