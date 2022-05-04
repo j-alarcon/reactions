@@ -15,6 +15,68 @@ In order to fight you need to combine four main elements in pairs: ❄️ (Ice),
     <li>⚙️ + 🍃 = 🌀 (Hurricane)</li>
 </ul>
 
+They all have weaknesses to other reactions, so you have to be careful with your elections. Althought you are not safe even if you choose the correct one, you are going to receive damage in any turn, but this will be higher or lower in base of the weaknesses of that reaction. You can check all advantages and weaknesses in this table: 
+
+<table>
+    <tr>
+        <td></td>
+        <td>💧</td>
+        <td>♨💨</td>
+        <td>💥</td>
+        <td>🌨️</td>
+        <td>☃️🤖</td>
+        <td>🌀</td>
+    </tr>
+    <tr>
+        <td>💧</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>♨💨</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>💥</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>🌨️</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>☃️🤖</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>🌀</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
 <strong>Instructions:</strong> Maybe you are on a lazy day, or you are lost in this weird website because you don't know how to use it, don't worry, I understand.
 There are two ways to see my work:
 <ul>
