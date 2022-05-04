@@ -74,12 +74,12 @@ They all have weaknesses to other reactions, so you have to be careful with your
     </tr>
     <tr>
         <td>🌀</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>3%</td>
+        <td>6%</td>
+        <td>6%</td>
+        <td>20%</td>
+        <td>6%</td>
+        <td>6%</td>
+        <td>15%</td>
     </tr>
 </table>
 
