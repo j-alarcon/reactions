@@ -17,7 +17,7 @@ In order to fight you need to combine four main elements in pairs: ❄️ (Ice),
 
 They all have weaknesses to other reactions, so you have to be careful with your elections. Althought you are not safe even if you choose the correct one, you are going to receive damage in any turn, but this will be higher or lower in base of the weaknesses of that reaction. You can check all advantages and weaknesses, as well as the percentages of life you would lost or cause in this table: 
 
-<table style="align: center">
+<table>
     <tr>
         <td></td>
         <td>💧</td>
