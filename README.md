@@ -29,7 +29,7 @@ They all have weaknesses to other reactions, so you have to be careful with your
     </tr>
     <tr>
         <td>💧</td>
-        <td>5%</td>
+        <td>3%</td>
         <td>15%</td>
         <td></td>
         <td></td>
@@ -38,7 +38,7 @@ They all have weaknesses to other reactions, so you have to be careful with your
     <tr>
         <td>♨💨</td>
         <td></td>
-        <td></td>
+        <td>3%</td>
         <td></td>
         <td></td>
         <td></td>
@@ -47,7 +47,7 @@ They all have weaknesses to other reactions, so you have to be careful with your
         <td>💥</td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>3%</td>
         <td></td>
         <td></td>
     </tr>
@@ -56,7 +56,7 @@ They all have weaknesses to other reactions, so you have to be careful with your
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>3%</td>
         <td></td>
     </tr>
     <tr>
@@ -65,7 +65,7 @@ They all have weaknesses to other reactions, so you have to be careful with your
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>3%</td>
     </tr>
     <tr>
         <td>🌀</td>
@@ -73,7 +73,7 @@ They all have weaknesses to other reactions, so you have to be careful with your
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td>3%</td>
     </tr>
 </table>
 
