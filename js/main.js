@@ -23,12 +23,19 @@ function computerPlay(elements) {
 }
 
 function playRound(yourReaction, computerReaction) {
-  document.getElementById("playerHP").innerText = document.getElementById(
-    "playerHP"
-  ).innerText -= calculatePercentage(yourReaction, computerReaction);
-  document.getElementById("computerHP").innerText = document.getElementById(
-    "computerHP"
-  ).innerText -= calculatePercentage(computerReaction, yourReaction);
+  lives[0].innerText -= calculatePercentage(yourReaction, computerReaction);
+  lives[1].innerText -= calculatePercentage(computerReaction, yourReaction);
+  endGame(lives);
+}
+
+function endGame(lives) {
+  for(let i = 0; i < lives.length; i++){
+    if(lives[i].innerText < 1){
+      document.getElementById("firstReaction").setAttribute("disabled", "disabled");
+      document.getElementById("secondReaction").setAttribute("disabled", "disabled");
+      document.getElementById("castReaction").setAttribute("disabled", "disabled");
+    }
+  }
 }
 
 // You will receive percentage to apply to first element and default ones
@@ -57,6 +64,11 @@ let selections = [
 ];
 
 let elements = ["Fire", "Ice", "Wind", "Machine"];
+
+let lives = [
+  document.getElementById("playerHP"),
+  document.getElementById("computerHP"),
+];
 
 let reactions = [
   new Reaction(
