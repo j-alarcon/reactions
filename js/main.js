@@ -1,4 +1,5 @@
 import { Reaction } from "./model.js";
+import {names, surnames, generateRandomName, disableItems} from "./utility.js";
 
 let selections = [
   document.getElementById("firstReaction"),
@@ -98,11 +99,7 @@ function getReaction(element1, element2, reactions) {
   }
 }
 
-function disableItems(...items) {
-  for (let i = 0; i < items.length; i++) {
-    items[i].setAttribute("disabled", "disabled");
-  }
-}
+
 
 function computerPlay(elements) {
   let firstValue, secondValue;
