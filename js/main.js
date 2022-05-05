@@ -1,63 +1,5 @@
 import { Reaction } from "./model.js";
 
-function getReaction(element1, element2, reactions) {
-  for (let i = 0; i < reactions.length; i++) {
-    for (let j = 0; j < 2; j++) {
-      if (
-        reactions[i].origin.includes(element1) &&
-        reactions[i].origin.includes(element2)
-      ) {
-        return reactions[i];
-      }
-    }
-  }
-}
-
-function computerPlay(elements) {
-  let firstValue, secondValue;
-  do {
-    firstValue = elements[Math.floor(Math.random() * 4)];
-    secondValue = elements[Math.floor(Math.random() * 4)];
-  } while (firstValue === secondValue);
-  return [firstValue, secondValue];
-}
-
-function playRound(yourReaction, computerReaction) {
-  lives[0].innerText -= calculatePercentage(yourReaction, computerReaction);
-  lives[1].innerText -= calculatePercentage(computerReaction, yourReaction);
-  endGame(lives);
-}
-
-function endGame(lives) {
-  for(let i = 0; i < lives.length; i++){
-    if(lives[i].innerText < 1){
-      document.getElementById("firstReaction").setAttribute("disabled", "disabled");
-      document.getElementById("secondReaction").setAttribute("disabled", "disabled");
-      document.getElementById("castReaction").setAttribute("disabled", "disabled");
-    }
-  }
-}
-
-// You will receive percentage to apply to first element and default ones
-function calculatePercentage(primaryReaction, secondaryReaction) {
-  for (let i in primaryReaction.weaknesses) {
-    if (primaryReaction.weaknesses[i].name === secondaryReaction.name) {
-      return primaryReaction.weaknesses[i].percentage;
-    }
-  }
-
-  if (primaryReaction.name === secondaryReaction.name) {
-    return 3;
-  } else {
-    return 6;
-  }
-}
-
-window.onload = () => {
-  selections[1].setAttribute("disabled", "disabled");
-  document.getElementById("castReaction").setAttribute("disabled", "disabled");
-};
-
 let selections = [
   document.getElementById("firstReaction"),
   document.getElementById("secondReaction"),
@@ -143,7 +85,69 @@ let reactions = [
   ),
 ];
 
-//
+function getReaction(element1, element2, reactions) {
+  for (let i = 0; i < reactions.length; i++) {
+    for (let j = 0; j < 2; j++) {
+      if (
+        reactions[i].origin.includes(element1) &&
+        reactions[i].origin.includes(element2)
+      ) {
+        return reactions[i];
+      }
+    }
+  }
+}
+
+function disableItems(...items) {
+  for (let i = 0; i < items.length; i++) {
+    items[i].setAttribute("disabled", "disabled");
+  }
+}
+
+function computerPlay(elements) {
+  let firstValue, secondValue;
+  do {
+    firstValue = elements[Math.floor(Math.random() * 4)];
+    secondValue = elements[Math.floor(Math.random() * 4)];
+  } while (firstValue === secondValue);
+  return [firstValue, secondValue];
+}
+
+function playRound(selections, lives, yourReaction, computerReaction) {
+  lives[0].innerText -= calculatePercentage(yourReaction, computerReaction);
+  lives[1].innerText -= calculatePercentage(computerReaction, yourReaction);
+  endGame(lives, selections);
+}
+
+function endGame(lives, selections) {
+  for (let i = 0; i < lives.length; i++) {
+    if (lives[i].innerText < 1) {
+      disableItems(
+        selections[0],
+        selections[1],
+        document.getElementById("castReaction")
+      );
+    }
+  }
+}
+
+// You will receive a percentage to apply to the first element and also default ones
+function calculatePercentage(primaryReaction, secondaryReaction) {
+  for (let i in primaryReaction.weaknesses) {
+    if (primaryReaction.weaknesses[i].name === secondaryReaction.name) {
+      return primaryReaction.weaknesses[i].percentage;
+    }
+  }
+  if (primaryReaction.name === secondaryReaction.name) {
+    return 3;
+  }
+  return 6;
+}
+
+window.onload = () => {
+  disableItems(selections[1], document.getElementById("castReaction"));
+};
+
 selections[0].addEventListener("change", () => {
   document.getElementById("castReaction").removeAttribute("disabled");
   selections[1].removeAttribute("disabled");
@@ -172,6 +176,8 @@ selections.forEach((e) =>
 // Send your reaction and computer ones
 document.getElementById("castReaction").addEventListener("click", () => {
   playRound(
+    selections,
+    lives,
     getReaction(selections[0].value, selections[1].value, reactions),
     getReaction(...computerPlay(elements), reactions)
   );
