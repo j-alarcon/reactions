@@ -93,10 +93,6 @@ function getReaction(element1, element2, reactions) {
   }
 }
 
-function disabledElements(...elements) {
-  for (let i = 0; i < elements.length; i++) {}
-}
-
 window.onload = () => {
   selections[1].setAttribute("disabled", "disabled");
   document.getElementById("castReaction").setAttribute("disabled", "disabled");
