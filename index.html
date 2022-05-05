@@ -4,31 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reactions</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/position.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/position.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
     <script type="module" src="./js/main.js" defer></script>
   </head>
   <body>
     <div id="computerBox"></div>
-    <div>
-      <label for="firstReaction">First Reaction</label>
-      <select name="firstReaction" id="firstReaction">
-        <option value="Fire">Fire</option>
-        <option value="Ice">Ice</option>
-        <option value="Wind">Wind</option>
-        <option value="Machine">Machine</option>
-      </select>
-      <label for="secondReaction">Second Reaction</label>
-      <select name="secondReaction" id="secondReaction" disabled>
-      </select>
+    <main class="main">
+      <div>
+        <label for="firstReaction">First Reaction</label>
+        <select name="firstReaction" id="firstReaction">
+          <option value="Fire">Fire</option>
+          <option value="Ice">Ice</option>
+          <option value="Wind">Wind</option>
+          <option value="Machine">Machine</option>
+        </select>
+        <label for="secondReaction">Second Reaction</label>
+        <select name="secondReaction" id="secondReaction" disabled></select>
+      </div>
+      <p>You have created: <span id="resultReaction">?</span></p>
+      <button disabled id="castReaction">Cast your reaction</button>
+      <p id="result">...</p>
+      <p>Your HP: <span id="playerHP">100</span>%</p>
+      <p>Computer's HP: <span id="computerHP">100</span>%</p>
+    </main>
+    <div id="playerBox">
     </div>
-    <p>You have created: <span id="resultReaction">?</span></p>
-    <button disabled id="castReaction">Cast your reaction</button>
-    <p id="result">...</p>
-    <p>Your HP: <span id="playerHP">100</span>%</p>
-    <p>Computer's HP: <span id="computerHP">100</span>%</p>
-    <div id="playerBox"></div>
   </body>
 </html>
