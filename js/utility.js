@@ -211,5 +211,5 @@ export let surnames = [
   }
   
   export function generateRandomName(name, surname) {
-      return name[Math.floor(Math.random()* name.length-1)] + " " + surname[Math.floor(Math.random() * surname.length -1)];
+      return name[Math.floor(Math.random()* name.length)] + " " + surname[Math.floor(Math.random() * surname.length)];
   }

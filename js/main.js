@@ -1,6 +1,8 @@
 import { Reaction } from "./model.js";
 import {names, surnames, generateRandomName, disableItems} from "./utility.js";
 
+console.log(generateRandomName(names, surnames));
+
 let selections = [
   document.getElementById("firstReaction"),
   document.getElementById("secondReaction"),
