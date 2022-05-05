@@ -11,38 +11,72 @@ let reactions = [
   new Reaction(
     "Water",
     ["Fire", "Ice"],
-    ["Snowbot", "heatWave"],
-    ["Explosion", "Blizzard", "heatWave"]
+    [
+      { name: "Snowbot", percentage: 18 },
+      { name: "heatWave", percentage: 18 },
+    ],
+    [
+      { name: "Explosion", percentage: 15 },
+      { name: "Blizzard", percentage: 15 },
+      { name: "heatWave", percentage: 15 },
+    ]
   ),
   new Reaction(
     "HeatWave",
     ["Fire", "Wind"],
-    ["Snowbot", "Water"],
-    ["Blizzard", "Water"]
+    [
+      { name: "Snowbot", percentage: 15 },
+      { name: "Water", percentage: 15 },
+    ],
+    [
+      { name: "Blizzard", percentage: 15 },
+      { name: "Water", percentage: 18 },
+    ]
   ),
   new Reaction(
     "Explosion",
     ["Fire", "Machine"],
-    ["Water", "Blizzard"],
-    ["Hurricane", "Snowbot"]
+    [
+      { name: "Water", percentage: 15 },
+      { name: "Blizzard", percentage: 15 },
+    ],
+    [
+      { name: "Hurricane", percentage: 20 },
+      { name: "Snowbot", percentage: 16 },
+    ]
   ),
   new Reaction(
     "Blizzard",
     ["Ice", "Wind"],
-    ["water", "heatWave"],
-    ["Snowbot", "Explosion"]
+    [
+      { name: "water", percentage: 15 },
+      { name: "heatWave", percentage: 15 },
+    ],
+    [
+      { name: "Snowbot", percentage: 16 },
+      { name: "Explosion", percentage: 15 },
+    ]
   ),
   new Reaction(
     "Snowbot",
     ["Ice", "Machine"],
-    ["Blizzard", "Explosion"],
-    ["Water", "heatWave"]
+    [
+      { name: "Blizzard", percentage: 16 },
+      { name: "Explosion", percentage: 16 },
+    ],
+    [
+      { name: "Water", percentage: 18 },
+      { name: "heatWave", percentage: 15 },
+    ]
   ),
   new Reaction(
     "Hurricane",
     ["Machine", "Wind"],
-    ["Explosion", "Hurricane"],
-    ["Hurricane"]
+    [
+      { name: "Explosion", percentage: 20 },
+      { name: "Hurricane", percentage: 15 },
+    ],
+    [{ name: "Hurricane", percentage: 15 }]
   ),
 ];
 
@@ -59,16 +93,14 @@ function getReaction(element1, element2, reactions) {
   }
 }
 
-function disabledElements(...elements){
-    for(let i = 0; i < elements.length; i++){
-
-    }
+function disabledElements(...elements) {
+  for (let i = 0; i < elements.length; i++) {}
 }
 
 window.onload = () => {
-    selections[1].setAttribute("disabled", "disabled");
-    document.getElementById("castReaction").setAttribute("disabled", "disabled");
-}
+  selections[1].setAttribute("disabled", "disabled");
+  document.getElementById("castReaction").setAttribute("disabled", "disabled");
+};
 
 selections[0].addEventListener("change", () => {
   document.getElementById("castReaction").removeAttribute("disabled");
