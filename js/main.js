@@ -134,11 +134,11 @@ function endGame(lives, selections) {
 // You will receive a percentage to apply to the first element and also default ones
 function calculatePercentage(primaryReaction, secondaryReaction) {
   for (let i in primaryReaction.weaknesses) {
-    if (primaryReaction.weaknesses[i].name === secondaryReaction.name) {
+    if (primaryReaction.weaknesses[i].name === secondaryReaction.getName) {
       return primaryReaction.weaknesses[i].percentage;
     }
   }
-  if (primaryReaction.name === secondaryReaction.name) {
+  if (primaryReaction.getName === secondaryReaction.getName) {
     return 3;
   }
   return 6;
