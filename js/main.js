@@ -23,11 +23,27 @@ function computerPlay(elements) {
 }
 
 function playRound(yourReaction, computerReaction) {
-  document.getElementById("result").innerText =
-    "Your reaction: " +
-    yourReaction.getName +
-    "\nComputer Reaction: " +
-    computerReaction.getName;
+  document.getElementById("playerHP").innerText = document.getElementById(
+    "playerHP"
+  ).innerText -= calculatePercentage(yourReaction, computerReaction);
+  document.getElementById("computerHP").innerText = document.getElementById(
+    "computerHP"
+  ).innerText -= calculatePercentage(computerReaction, yourReaction);
+}
+
+// You will receive percentage to apply to first element and default ones
+function calculatePercentage(primaryReaction, secondaryReaction) {
+  for (let i in primaryReaction.weaknesses) {
+    if (primaryReaction.weaknesses[i].name === secondaryReaction.name) {
+      return primaryReaction.weaknesses[i].percentage;
+    }
+  }
+
+  if (primaryReaction.name === secondaryReaction.name) {
+    return 3;
+  } else {
+    return 6;
+  }
 }
 
 window.onload = () => {
@@ -115,7 +131,7 @@ let reactions = [
   ),
 ];
 
-// 
+//
 selections[0].addEventListener("change", () => {
   document.getElementById("castReaction").removeAttribute("disabled");
   selections[1].removeAttribute("disabled");
