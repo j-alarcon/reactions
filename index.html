@@ -10,30 +10,46 @@
     <link rel="stylesheet" href="./css/responsive.css" />
     <script type="module" src="./js/main.js" defer></script>
   </head>
-  <body class="max-width max-height flex align-center ">
+  <body class="max-width max-height flex align-center">
     <div class="side-bar max-height background-black"></div>
     <main class="flex direction-column max-height">
       <div class="player-ui reverse">
+        <div class="test reverse">
+          <div id="portrait">
+            <div id="life"></div>
+            <div id="photo">
+              <span id="player-hp"><span id="playerHP">100</span>%</span>
+              <span id="player-name">You</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <label for="firstReaction">First Reaction</label>
-        <select name="firstReaction" id="firstReaction">
-          <option value="Fire">Fire</option>
-          <option value="Ice">Ice</option>
-          <option value="Wind">Wind</option>
-          <option value="Machine">Machine</option>
-        </select>
-        <label for="secondReaction">Second Reaction</label>
-        <select name="secondReaction" id="secondReaction" disabled></select>
-      </div>
-      <p>You have created: <span id="resultReaction">?</span></p>
-      <button disabled id="castReaction">Cast your reaction</button>
-      <p id="result">...</p>
-      <p>Your HP: <span id="playerHP">100</span>%</p>
-      <p>Computer's HP: <span id="computerHP">100</span>%</p> 
+        <div>
+          <label for="firstReaction">First Reaction</label>
+          <select name="firstReaction" id="firstReaction">
+            <option value="Fire">Fire</option>
+            <option value="Ice">Ice</option>
+            <option value="Wind">Wind</option>
+            <option value="Machine">Machine</option>
+          </select>
+          <label for="secondReaction">Second Reaction</label>
+          <select name="secondReaction" id="secondReaction" disabled></select>
+        </div>
+        <p>You have created: <span id="resultReaction">?</span></p>
+        <button disabled id="castReaction">Cast your reaction</button>
+        <p id="result">...</p>
+        <p>Computer's HP: <span id="computerHP">100</span>%</p>
       </div>
       <div class="player-ui flex justify-center align-center">
-        <div class="test">hhh</div>
+        <div class="test">
+          <div id="portrait">
+            <div id="life"></div>
+            <div id="photo">
+              <span id="player-hp"><span id="playerHP">100</span>%</span>
+              <span id="player-name">You</span>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <div class="side-bar max-height background-black"></div>
