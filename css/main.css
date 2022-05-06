@@ -1,21 +1,15 @@
-#playerBox, #computerBox{
+.max-width{
     width: 100%;
-    background-color: red;
-    height: 250px;
 }
 
-body, html{ 
-    width: 100%;
+.max-height{
     height: 100%;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
+.background-red{
+    background-color: red;
 }
 
-main{
-    display: flex;
+.panels-height{
     height: 200px;
-    flex-grow: 1;
 }

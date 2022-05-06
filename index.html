@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="max-width max-height" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="./css/responsive.css" />
     <script type="module" src="./js/main.js" defer></script>
   </head>
-  <body>
-    <div id="computerBox"></div>
-    <main class="main">
+  <body class="max-width max-height flex direction-column">
+    <div class="max-width background-red panels-height"></div>
+    <main class="flex main">
       <div>
         <label for="firstReaction">First Reaction</label>
         <select name="firstReaction" id="firstReaction">
@@ -30,7 +30,7 @@
       <p>Your HP: <span id="playerHP">100</span>%</p>
       <p>Computer's HP: <span id="computerHP">100</span>%</p>
     </main>
-    <div id="playerBox">
+    <div class="max-width background-red panels-height">
     </div>
   </body>
 </html>
