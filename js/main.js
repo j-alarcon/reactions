@@ -1,7 +1,7 @@
 import { Reaction } from "./model.js";
 import {names, surnames, generateRandomName, disableItems} from "./utility.js";
 
-console.log(generateRandomName(names, surnames));
+document.getElementById("cpu-name").innerText = generateRandomName(names, surnames);
 
 let selections = [
   document.getElementById("firstReaction"),
