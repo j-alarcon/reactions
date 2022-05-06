@@ -1,11 +1,15 @@
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
 
-.direction-column{
-    flex-direction: column;
+.direction-column {
+  flex-direction: column;
 }
 
-.main{
-    flex-grow: 1;
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }

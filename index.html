@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="./css/responsive.css" />
     <script type="module" src="./js/main.js" defer></script>
   </head>
-  <body class="max-width max-height flex direction-column">
-    <div class="max-width background-red panels-height"></div>
-    <main class="flex main">
+  <body class="max-width max-height flex align-center ">
+    <div class="side-bar max-height background-black"></div>
+    <main class="flex direction-column max-height">
+      <div class="player-ui reverse">
+      </div>
       <div>
         <label for="firstReaction">First Reaction</label>
         <select name="firstReaction" id="firstReaction">
@@ -28,9 +30,11 @@
       <button disabled id="castReaction">Cast your reaction</button>
       <p id="result">...</p>
       <p>Your HP: <span id="playerHP">100</span>%</p>
-      <p>Computer's HP: <span id="computerHP">100</span>%</p>
+      <p>Computer's HP: <span id="computerHP">100</span>%</p> 
+      </div>
+      <div class="player-ui">
+      </div>
     </main>
-    <div class="max-width background-red panels-height">
-    </div>
+    <div class="side-bar max-height background-black"></div>
   </body>
 </html>

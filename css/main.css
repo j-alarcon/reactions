@@ -1,15 +1,33 @@
-.max-width{
-    width: 100%;
+.max-width {
+  width: 100%;
 }
 
-.max-height{
-    height: 100%;
+main {
+  width: 90%;
 }
 
-.background-red{
-    background-color: red;
+.side-bar {
+  width: 5%;
 }
 
-.panels-height{
-    height: 200px;
+.max-height {
+  height: 100%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.background-black {
+  background-color: black;
+}
+
+.reverse {
+  transform: rotate(180deg);
+}
+
+.player-ui {
+  background: url("./../img/panel.png") repeat-x center;
+  background-size: cover;
+  height: 45%;
 }
