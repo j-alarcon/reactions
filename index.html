@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/responsive.css" />
     <script type="module" src="./js/main.js" defer></script>
   </head>
-  <body class="max-width max-height flex align-center">
+  <body class="max-width max-height flex align-center background-space">
     <div class="side-bar max-height background-black"></div>
     <main class="flex direction-column max-height">
       <div class="player-ui reverse">
@@ -24,6 +24,7 @@
           </div>
         </div>
       </div>
+      <div class="middle">
         <div>
           <label for="firstReaction">First Reaction</label>
           <select name="firstReaction" id="firstReaction">
@@ -34,11 +35,9 @@
           </select>
           <label for="secondReaction">Second Reaction</label>
           <select name="secondReaction" id="secondReaction" disabled></select>
-        </div>
-        <p>You have created: <span id="resultReaction">?</span></p>
-        <button disabled id="castReaction">Cast your reaction</button>
-        <p id="result">...</p>
-        <p>Computer's HP: <span id="computerHP">100</span>%</p>
+          <p>You have created: <span id="resultReaction">?</span></p>
+          <button disabled id="castReaction">Cast your reaction</button>
+        </div> 
       </div>
       <div class="player-ui flex justify-center align-center">
         <div class="test">

@@ -22,6 +22,10 @@ main {
   background-color: black;
 }
 
+.background-space{
+    background-color: #37425B;
+}
+
 .reverse {
   transform: rotate(180deg);
 }
@@ -125,4 +129,16 @@ main {
         margin-left: 9px;
         font-size: .65rem;
         border-bottom-left-radius: 50px;
+}
+
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle div{
+    background-color: white;
+    height: 10rem;
+    width: 30rem;
 }
