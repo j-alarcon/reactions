@@ -147,7 +147,7 @@ window.onload = () => {
   disableItems(selections[1], document.getElementById("castReaction"));
 };
 
-selections[0].addEventListener("change", () => {
+function testFunction(){
   document.getElementById("castReaction").removeAttribute("disabled");
   selections[1].removeAttribute("disabled");
   selections[1].innerHTML = "";
@@ -159,7 +159,11 @@ selections[0].addEventListener("change", () => {
       document.getElementById(selections[1].appendChild(option));
     }
   });
-});
+}
+
+/* selections[0].addEventListener("change", () => {
+  
+}); */
 
 // Obtain current reaction
 selections.forEach((e) =>
@@ -181,3 +185,22 @@ document.getElementById("castReaction").addEventListener("click", () => {
     getReaction(...computerPlay(elements), reactions)
   );
 });
+
+document.getElementById("fire").addEventListener("click", function(){
+  for(let i = 0; i < 4; i++){
+    if(selections[0].options[i].value == "Ice"){
+      selections[0].selectedIndex = i;
+      testFunction();
+      document.getElementById("submenu").classList.add("hidden");
+      document.getElementById("checkbox").checked = false;
+    }
+  }
+})
+
+document.getElementById("checkbox").addEventListener("click", function(){
+  if(document.getElementById("checkbox").checked){
+    document.getElementById("submenu").classList.remove("hidden");
+  } else {
+    document.getElementById("submenu").classList.add("hidden");
+  }
+})

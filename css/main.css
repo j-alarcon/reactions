@@ -40,11 +40,18 @@ main {
 }
 
 .test{
-    margin-top: 140px;
     width: 20%;
     height: 15rem;
     display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+#portrait{
+  margin-right: 32px;
 }
 
 #photo{
@@ -141,4 +148,36 @@ main {
     background-color: white;
     height: 10rem;
     width: 30rem;
+}
+
+#selections{
+  background-color: #30303b;
+  width: 15rem;
+  height: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 13px;
+}
+
+.option{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  outline: solid white 2px;
+  background-color: #414149;
+}
+
+#submenu{
+  display: flex;
+  position: absolute;
+  background-color: white;
+  bottom: 10rem;
+  right: 20rem;
+  width: 10rem;
+  height: 5rem;
+}
+
+.hidden{
+  visibility: hidden;
 }
