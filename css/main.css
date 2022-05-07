@@ -32,7 +32,6 @@ main {
 
 .player-ui {
   background: url("./../img/panel.png") repeat-x center;
-  background-size: cover;
   height: 45%;
   display: flex;
   justify-content: center;
@@ -47,7 +46,7 @@ main {
     flex-direction: column;
     justify-content: center;
     position: absolute;
-    bottom: 0;
+    margin-top: 5rem;
 }
 
 #portrait{
@@ -95,6 +94,12 @@ main {
     margin-left: 12px;
     position: absolute;
     outline: 2px solid whitesmoke;
+    z-index: 0;
+}
+
+#percentageLife{
+  background-color: #c23a22;
+  height: 0;
 }
 
 .player-hp{

@@ -115,6 +115,8 @@ function computerPlay(elements) {
 function playRound(selections, lives, yourReaction, computerReaction) {
   lives[0].innerText -= calculatePercentage(yourReaction, computerReaction);
   lives[1].innerText -= calculatePercentage(computerReaction, yourReaction);
+  console.log(lives[0].innerText);
+  document.getElementById("percentageLife").style.height = (100 -lives[1].innerText) + "%"; 
   endGame(lives, selections);
 }
 
@@ -204,3 +206,4 @@ document.getElementById("checkbox").addEventListener("click", function(){
     document.getElementById("submenu").classList.add("hidden");
   }
 })
+
