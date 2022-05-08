@@ -1,19 +1,31 @@
 import { Reaction } from "./model.js";
-import {names, surnames, generateRandomName, disableItems} from "./utility.js";
+import {
+  names,
+  surnames,
+  generateRandomName,
+  disableItems,
+} from "./utility.js";
 
-document.getElementById("cpu-name").innerText = generateRandomName(names, surnames);
+document.getElementById("cpu-name").innerText = generateRandomName(
+  names,
+  surnames
+);
 
 let selections = [
   document.getElementById("firstReaction"),
   document.getElementById("secondReaction"),
 ];
 
+let options = document.getElementsByClassName("item-submenu");
+
 let elements = ["Fire", "Ice", "Wind", "Machine"];
 
 let lives = [
-  document.getElementById("playerHP"),
-  document.getElementById("computerHP"),
+  document.getElementById("computer-hp"),
+  document.getElementById("player-hp"),
 ];
+
+let percentageLife = document.getElementsByClassName("lost-life");
 
 let reactions = [
   new Reaction(
@@ -101,8 +113,6 @@ function getReaction(element1, element2, reactions) {
   }
 }
 
-
-
 function computerPlay(elements) {
   let firstValue, secondValue;
   do {
@@ -113,10 +123,11 @@ function computerPlay(elements) {
 }
 
 function playRound(selections, lives, yourReaction, computerReaction) {
-  lives[0].innerText -= calculatePercentage(yourReaction, computerReaction);
-  lives[1].innerText -= calculatePercentage(computerReaction, yourReaction);
-  console.log(lives[0].innerText);
-  document.getElementById("percentageLife").style.height = (100 -lives[1].innerText) + "%"; 
+  lives[0].innerText -= calculatePercentage(computerReaction, yourReaction);
+  lives[1].innerText -= calculatePercentage(yourReaction, computerReaction);
+  for (let i = 0; i < lives.length; i++) {
+    percentageLife[i].style.height = 100 - lives[i].innerText + "%";
+  }
   endGame(lives, selections);
 }
 
@@ -139,19 +150,17 @@ function calculatePercentage(primaryReaction, secondaryReaction) {
       return primaryReaction.weaknesses[i].percentage;
     }
   }
-  if (primaryReaction.getName === secondaryReaction.getName) {
-    return 3;
-  }
-  return 6;
+  primaryReaction.getName === secondaryReaction.getName ? 3 : 6;
 }
 
-window.onload = () => {
-  disableItems(selections[1], document.getElementById("castReaction"));
-};
+function activateItems(...items) {
+  for (let i = 0; i < items.length; i++) {
+    items[i].removeAttribute("disabled");
+  }
+}
 
-function testFunction(){
-  document.getElementById("castReaction").removeAttribute("disabled");
-  selections[1].removeAttribute("disabled");
+function fillSelect(selections, elements) {
+  activateItems(selections[1], document.getElementById("castReaction"));
   selections[1].innerHTML = "";
   elements.forEach((e) => {
     if (selections[0].options[selections[0].selectedIndex].value != e) {
@@ -163,9 +172,9 @@ function testFunction(){
   });
 }
 
-/* selections[0].addEventListener("change", () => {
-  
-}); */
+window.onload = () => {
+  disableItems(selections[1], document.getElementById("castReaction"));
+};
 
 // Obtain current reaction
 selections.forEach((e) =>
@@ -188,22 +197,17 @@ document.getElementById("castReaction").addEventListener("click", () => {
   );
 });
 
-document.getElementById("fire").addEventListener("click", function(){
-  for(let i = 0; i < 4; i++){
-    if(selections[0].options[i].value == "Ice"){
-      selections[0].selectedIndex = i;
-      testFunction();
-      document.getElementById("submenu").classList.add("hidden");
-      document.getElementById("checkbox").checked = false;
-    }
-  }
-})
-
-document.getElementById("checkbox").addEventListener("click", function(){
-  if(document.getElementById("checkbox").checked){
-    document.getElementById("submenu").classList.remove("hidden");
-  } else {
+for (let i = 0; i < options.length; i++) {
+  options[i].addEventListener("click", () => {
+    selections[0].selectedIndex = options[i].getAttribute("data-value");
+    fillSelect(selections, elements);
     document.getElementById("submenu").classList.add("hidden");
-  }
-})
+    document.getElementById("checkbox").checked = false;
+  });
+}
 
+document.getElementById("checkbox").addEventListener("click", function () {
+  document.getElementById("checkbox").checked
+    ? document.getElementById("submenu").classList.remove("hidden")
+    : document.getElementById("submenu").classList.add("hidden");
+});

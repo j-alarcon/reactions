@@ -2,10 +2,6 @@
   width: 100%;
 }
 
-main {
-  width: 90%;
-}
-
 .side-bar {
   width: 5%;
 }
@@ -22,159 +18,137 @@ main {
   background-color: black;
 }
 
-.background-space{
-    background-color: #37425B;
+.background-space {
+  background-color: #37425b;
+}
+
+.background-grey {
+  background-color: #30303b;
+}
+
+.background-darkblue {
+  background-color: #003b59;
+}
+
+.background-green {
+  background-color: green;
+}
+
+.background-red {
+  background-color: #c23a22;
+}
+
+.background-white {
+  background-color: whitesmoke;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.border-white {
+  border: 4px solid white;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 10px black;
+}
+
+.cover-background {
+  background-size: cover;
+}
+
+.outline-white {
+  outline: 2px solid whitesmoke;
 }
 
 .reverse {
   transform: rotate(180deg);
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .player-ui {
   background: url("./../img/panel.png") repeat-x center;
   height: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.test{
-    width: 20%;
-    height: 15rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    margin-top: 5rem;
+.playersContainer {
+  width: 30%;
+  height: 15rem;
+  margin-top: 5rem;
 }
 
-#portrait{
-  margin-right: 32px;
+.life {
+  width: 1rem;
+  height: 6.4rem;
+  margin-top: 15px;
+  margin-left: 12px;
 }
 
-#photo{
-    background: url("./../img/portraits/default.jpg") no-repeat center;
-    background-size: cover;
-    width: 9rem;
-    height: 130px;
-    border: 4px solid white;
-    border-radius: 4px;
-    margin-left: 28.5px;
-    margin-top: 12px;
-    border-top-left-radius: 80px;
-    border-top-right-radius: 70px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 2px 2px 10px black;
- 
+#computer-photo {
+  background: url("./../img/portraits/dog.jpg") no-repeat center/cover;
 }
 
-#photo2{
-    background: url("./../img/portraits/dog.jpg") no-repeat center;
-    background-size: cover;
-    width: 9rem;
-    height: 130px;
-    border: 4px solid white;
-    border-radius: 4px;
-    margin-left: 28px;
-    margin-top: 13px;
-    border-top-right-radius: 70px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 2px 2px 10px black;
- 
+#player-photo {
+  background: url("./../img/portraits/default.jpg") no-repeat center/cover;
 }
 
-#life{
-    width: 1rem;
-    height: 101px;
-    background-color: green;
-    margin-top: 15px;
-    margin-left: 12px;
-    position: absolute;
-    outline: 2px solid whitesmoke;
-    z-index: 0;
+.photo {
+  width: 9rem;
+  height: 130px;
+  margin-left: 28px;
+  margin-top: 13px;
+  border-top-right-radius: 70px;
 }
 
-#percentageLife{
-  background-color: #c23a22;
-  height: 0;
+.lost-life {
   transition-property: height;
   transition-duration: 1s;
+  height: 0;
 }
 
-.player-hp{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #003b59;
-    color: white;
-    text-shadow: 1px 1px black;
-    border-radius: 10px;
-    font-weight: bold;
-    width: 2.4rem;
-    height: 1.9rem;
-    position: absolute;
-    margin-top: 98px;
-    right: 122px;
-    font-size: 0.85rem;
-    z-index: 1;
+.container-hp,
+.option {
+  border-radius: 10px;
 }
 
-.player-name{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        background-color: white;
-        font-weight: bold;
-        width: 140px;
-        padding: 4px 8px 0 0;
-        position: absolute;
-        margin-top: 106px;
-        font-size: .65rem;
+.container-hp {
+  width: 2.4rem;
+  height: 1.9rem;
+  margin-top: 98px;
+  font-size: 0.85rem;
 }
 
-.middle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.player-name {
+  width: 140px;
+  padding: 4px 8px 0 0;
+  margin-top: 106px;
+  font-size: 0.65rem;
 }
 
-.middle div{
-    background-color: white;
-    height: 10rem;
-    width: 30rem;
-}
-
-#selections{
-  background-color: #30303b;
+.selections {
   width: 15rem;
   height: 4rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   border-radius: 13px;
 }
 
-.option{
+.option {
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 10px;
-  outline: solid white 2px;
-  background-color: #414149;
 }
 
-#submenu{
-  display: flex;
-  position: absolute;
-  background-color: white;
-  bottom: 10rem;
-  right: 20rem;
+.submenu {
   width: 10rem;
   height: 5rem;
-}
-
-.hidden{
-  visibility: hidden
 }

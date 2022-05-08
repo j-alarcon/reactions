@@ -13,3 +13,36 @@
 .justify-center {
   justify-content: center;
 }
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.life {
+  z-index: 0;
+}
+
+.photo,
+.container-hp {
+  z-index: 1;
+}
+
+.container-hp {
+  right: 122px;
+}
+
+.submenu {
+  top: 10rem;
+}

@@ -12,21 +12,21 @@
   </head>
   <body class="max-width max-height flex align-center background-space">
     <div class="side-bar max-height background-black"></div>
-    <main class="flex direction-column max-height">
-      <div class="player-ui reverse">
-        <div class="test reverse">
-          <div id="portrait">
-            <div id="life">
-              <div id="percentageLife"></div>
+    <main class="flex direction-column max-width max-height">
+      <div class="player-ui reverse flex justify-center align-center">
+        <div class="playersContainer reverse flex direction-column justify-center align-center">
+          <div>
+            <div class="life background-green outline-white box-shadow absolute">
+              <div class="lost-life background-red"></div>
             </div>
-            <div id="photo2">
-              <span class="player-hp"><span id="computerHP">100</span></span>
-              <span id="cpu-name" class="player-name">Chanel Terrero</span>
+            <div class="photo border-white box-shadow relative" id="computer-photo">
+              <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center absolute"" id="computer-hp">100</span>
+              <span id="cpu-name" class="player-name background-white flex justify-end align-center bold">Chanel Terrero</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="middle">
+      <div class="flex justify-center align-center">
         <div>
           <select class="hidden" name="firstReaction" id="firstReaction">
             <option value="Fire">Fire</option>
@@ -41,25 +41,27 @@
         </div> 
       </div>
       <div class="player-ui flex justify-center align-center">
-        <div class="test">
-          <div id="portrait">
-            <div id="life"></div>
-            <div id="photo">
-              <span class="player-hp"><span id="playerHP">100</span></span>
-              <span class="player-name">You</span>
+        <div class="playersContainer flex direction-column justify-center align-center">
+          <div>
+            <div class="life background-green outline-white box-shadow absolute">
+              <div class="lost-life background-red"></div>
+            </div>
+            <div class="photo border-white box-shadow relative" id="player-photo">
+              <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center absolute" id="player-hp">100</span>
+              <span class="player-name background-white flex justify-end align-center bold">You</span>
             </div>
           </div>
-          <div id="selections">
-            <div class="option">
-              <input type="checkbox" id="checkbox">
-              <div id="submenu" class="hidden">
-                <span id="fire">Fire</span>
-                <span id="water">Water</span>
-                <span id="machine">Machine</span>
-                <span id="ice">Ice</span>
+          <div class="selections background-grey flex justify-space-around align-center">
+            <div class="option outline-white">
+              <input type="checkbox" id="checkbox" class="checkbox">
+              <div class="submenu flex hidden background-white absolute" id="submenu">
+                <span data-value="0" class="item-submenu">Fire</span>
+                <span data-value="1" class="item-submenu">Ice</span>
+                <span data-value="2" class="item-submenu">Wind</span>
+                <span data-value="3" class="item-submenu">Machine</span>
               </div>
             </div>
-            <div class="option"></div>
+            <div class="option outline-white"></div>
           </div>
         </div>
       </div>
