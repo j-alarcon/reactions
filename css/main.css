@@ -8,7 +8,7 @@
 }
 
 .max-height {
-  height: 100%;
+  height: 100vh;
 }
 
 .overflow-hidden {
@@ -46,6 +46,7 @@
 .text-white {
   color: white;
 }
+
 
 .text-shadow {
   text-shadow: 1px 1px black;
@@ -90,7 +91,7 @@
 
 .player-ui {
   background: url("./../img/panel.png") repeat-x center;
-  height: 45vh;
+  height: 45%;
 }
 
 .playersContainer {

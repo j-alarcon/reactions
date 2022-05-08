@@ -1,7 +1,13 @@
-@media screen and (max-height: 750px){
+@media screen and (max-height: 650px){
     *{
         background-color: black;
         visibility: hidden;
         overflow: hidden;
     }
+}
+
+@media screen and (max-width: 600px){
+    .player-ui {
+        background: url("./../img/panel.png") repeat-x center/cover;
+      }
 }
