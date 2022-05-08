@@ -16,9 +16,16 @@ let selections = [
   document.getElementById("secondReaction"),
 ];
 
-let options = document.getElementsByClassName("item-submenu");
-
 let elements = ["Fire", "Ice", "Wind", "Machine"];
+
+let options = [document.getElementsByClassName("item-submenu-left"), document.getElementsByClassName("item-submenu-right")]
+
+let submenus = [
+  document.getElementById("leftSubmenu"),
+  document.getElementById("rightSubmenu"),
+];
+
+let checkBox = document.getElementsByClassName("checkbox");
 
 let lives = [
   document.getElementById("computer-hp"),
@@ -172,6 +179,12 @@ function fillSelect(selections, elements) {
   });
 }
 
+function showHideMenu(checkbox, menu) {
+  checkbox.checked
+    ? menu.classList.remove("hidden")
+    : menu.classList.add("hidden");
+}
+
 window.onload = () => {
   disableItems(selections[1], document.getElementById("castReaction"));
 };
@@ -198,16 +211,21 @@ document.getElementById("castReaction").addEventListener("click", () => {
 });
 
 for (let i = 0; i < options.length; i++) {
-  options[i].addEventListener("click", () => {
-    selections[0].selectedIndex = options[i].getAttribute("data-value");
-    fillSelect(selections, elements);
-    document.getElementById("submenu").classList.add("hidden");
-    document.getElementById("checkbox").checked = false;
-  });
+  for(let j = 0; j < options[i].length; j++){
+    options[i][j].addEventListener("click", () => {
+      selections[0].selectedIndex = options[i][j].getAttribute("data-value");
+      fillSelect(selections, elements);
+      resetMenu(options[i][j].parentNode, checkBox[i]);
+    });
+  } 
 }
 
-document.getElementById("checkbox").addEventListener("click", function () {
-  document.getElementById("checkbox").checked
-    ? document.getElementById("submenu").classList.remove("hidden")
-    : document.getElementById("submenu").classList.add("hidden");
-});
+function resetMenu(submenu, checkbox){
+  submenu.classList.add("hidden");
+  checkbox.checked = false;
+}
+for (let i = 0; i < checkBox.length; i++) {
+  checkBox[i].addEventListener("click", () => {
+    showHideMenu(checkBox[i], submenus[i]);
+  });
+}

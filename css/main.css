@@ -78,6 +78,10 @@
   visibility: hidden;
 }
 
+.invisible{
+  opacity: 0;
+}
+
 .player-ui {
   background: url("./../img/panel.png") repeat-x center;
   height: 45%;
