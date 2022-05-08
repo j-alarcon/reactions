@@ -3,7 +3,8 @@
 }
 
 .side-bar {
-  width: 5%;
+  width: 5vw;
+  height: 100vh;
 }
 
 .max-height {
@@ -78,13 +79,18 @@
   visibility: hidden;
 }
 
-.invisible{
+.invisible {
   opacity: 0;
+}
+
+.container-hp,
+.option {
+  border-radius: 10px;
 }
 
 .player-ui {
   background: url("./../img/panel.png") repeat-x center;
-  height: 45%;
+  height: 45vh;
 }
 
 .playersContainer {
@@ -122,11 +128,6 @@
   height: 0;
 }
 
-.container-hp,
-.option {
-  border-radius: 10px;
-}
-
 .container-hp {
   width: 2.4rem;
   height: 1.9rem;
@@ -155,4 +156,8 @@
 .submenu {
   width: 10rem;
   height: 5rem;
+}
+
+.middle {
+  height: 10vh;
 }

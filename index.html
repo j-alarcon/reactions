@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="max-width max-height" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="./css/responsive.css" />
     <script type="module" src="./js/main.js" defer></script>
   </head>
-  <body class="max-width max-height flex align-center background-space">
-    <div class="side-bar max-height background-black"></div>
+  <body class="flex align-center background-space">
+    <div class="side-bar background-black"></div>
     <main class="flex direction-column max-width max-height">
-      <div class="player-ui reverse flex justify-center align-center">
+      <div class="player-ui reverse flex justify-center align-center max-width">
         <div class="playersContainer reverse flex direction-column justify-center align-center">
           <div>
             <div class="life background-green outline-white box-shadow absolute">
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-center align-center">
+      <div class="middle flex justify-center align-center">
         <div>
           <select class="hidden" name="firstReaction" id="firstReaction">
             <option value="Fire">Fire</option>
@@ -46,7 +46,7 @@
           <button disabled id="castReaction">Cast your reaction</button>
         </div> 
       </div>
-      <div class="player-ui flex justify-center align-center">
+      <div class="player-ui flex justify-center align-center max-width">
         <div class="playersContainer flex direction-column justify-center align-center">
           <div>
             <div class="life background-green outline-white box-shadow absolute">
@@ -77,6 +77,6 @@
         </div>
       </div>
     </main>
-    <div class="side-bar max-height background-black"></div>
+    <div class="side-bar background-black"></div>
   </body>
 </html>
