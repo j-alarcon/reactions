@@ -16,8 +16,6 @@ let selections = [
   document.getElementById("secondReaction"),
 ];
 
-let elements = ["Fire", "Ice", "Wind", "Machine"];
-
 let options = [
   document.getElementsByClassName("item-submenu-left"),
   document.getElementsByClassName("item-submenu-right"),
@@ -36,6 +34,13 @@ let lives = [
 ];
 
 let percentageLife = document.getElementsByClassName("lost-life");
+
+let elements = [
+  { name: "Fire", img: "🔥" },
+  { name: "Ice", img: "❄️" },
+  { name: "Wind", img: "🍃" },
+  { name: "Machine", img: "⚙️" },
+];
 
 let reactions = [
   new Reaction(
@@ -126,8 +131,8 @@ function getReaction(element1, element2, reactions) {
 function computerPlay(elements) {
   let firstValue, secondValue;
   do {
-    firstValue = elements[Math.floor(Math.random() * 4)];
-    secondValue = elements[Math.floor(Math.random() * 4)];
+    firstValue = elements[Math.floor(Math.random() * 4)].name;
+    secondValue = elements[Math.floor(Math.random() * 4)].name;
   } while (firstValue === secondValue);
   return [firstValue, secondValue];
 }
@@ -174,13 +179,13 @@ function activateItems(...items) {
 }
 
 function fillSelect(selections, elements) {
-  activateItems(document.getElementById("castReaction"));
+  activateItems(checkBox[1], document.getElementById("castReaction"));
   selections[1].innerHTML = "";
   elements.forEach((e) => {
-    if (selections[0].options[selections[0].selectedIndex].value != e) {
+    if (selections[0].options[selections[0].selectedIndex].value != e.name) {
       let option = document.createElement("option");
-      option.innerText = e;
-      option.value = e;
+      option.innerText = e.name;
+      option.value = e.name;
       document.getElementById(selections[1].appendChild(option));
     }
   });
@@ -193,9 +198,13 @@ function fillMenu(selections) {
     let span = document.createElement("span");
     span.setAttribute("data-value", i);
     span.classList.add("item-submenu-right");
-    span.innerText = selections[1].options[i].innerText;
+    span.innerText = elements.find(
+      (e) => e.name === selections[1].options[i].innerText
+    ).img;
     span.addEventListener("click", () => {
       selections[1].selectedIndex = span.getAttribute("data-value");
+      document.getElementById("panel-element-right-player").innerText =
+        span.innerText;
       resetMenu(submenus[1], checkBox[1]);
     });
     submenus[1].appendChild(span);
@@ -214,7 +223,7 @@ function resetMenu(submenu, checkbox) {
 }
 
 window.onload = () => {
-  disableItems(document.getElementById("castReaction"));
+  disableItems(checkBox[1], document.getElementById("castReaction"));
 };
 
 // Obtain current reaction
@@ -242,6 +251,8 @@ for (let i = 0; i < options.length; i++) {
   for (let j = 0; j < options[i].length; j++) {
     options[i][j].addEventListener("click", () => {
       selections[0].selectedIndex = options[i][j].getAttribute("data-value");
+      document.getElementById("panel-element-left-player").innerText =
+        options[i][j].textContent;
       fillSelect(selections, elements);
       resetMenu(options[i][j].parentNode, checkBox[i]);
     });

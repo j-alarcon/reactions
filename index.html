@@ -34,13 +34,13 @@
       </div>
       <div class="middle flex justify-center align-center">
         <div>
-          <select class="hidden" name="firstReaction" id="firstReaction">
+          <select name="firstReaction" id="firstReaction">
             <option value="Fire">Fire</option>
             <option value="Ice">Ice</option>
             <option value="Wind">Wind</option>
             <option value="Machine">Machine</option>
           </select>
-          <select class="hidden" name="secondReaction" id="secondReaction"></select>
+          <select name="secondReaction" id="secondReaction"></select>
           <span id="resultReaction">?</span>
           <button disabled id="castReaction">Cast your reaction</button>
         </div> 
@@ -57,8 +57,9 @@
             </div>
           </div>
           <div class="selections background-grey flex justify-space-around align-center">
-            <div class="option outline-white">
-              <input type="checkbox" class="checkbox max-width max-height invisible">
+            <div class="option outline-white flex justify-center align-center">
+              <span class="flex justify-center max-width" id="panel-element-left-player"></span>
+              <input type="checkbox" class="checkbox absolute invisible">
               <div class="submenu flex hidden background-white absolute" id="leftSubmenu">
                 <span data-value="0" class="item-submenu-left">🔥</span>
                 <span data-value="1" class="item-submenu-left">❄️</span>
@@ -66,10 +67,10 @@
                 <span data-value="3" class="item-submenu-left">⚙️</span>
               </div>
             </div>
-            <div class="option outline-white">
-              <input type="checkbox" class="checkbox max-width max-height invisible">
+            <div class="option outline-white flex justify-center align-center">
+              <span class="flex justify-center max-width" id="panel-element-right-player"></span>
+              <input type="checkbox" class="checkbox absolute invisible">
               <div class="submenu flex hidden background-white absolute" id="rightSubmenu">
-                <span data-value="0" class="item-submenu-right">Fire</span>
               </div>
             </div>
           </div>

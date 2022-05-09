@@ -46,3 +46,7 @@
 .submenu {
   top: 10rem;
 }
+
+.checkbox{
+  transform: scale(3.2);
+}
