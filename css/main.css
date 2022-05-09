@@ -21,6 +21,7 @@
 
 .background-space {
   background-color: #37425b;
+  background-image: url("../img/space.svg");
 }
 
 .background-grey {
@@ -47,23 +48,23 @@
   outline: 2px solid whitesmoke;
 }
 
-.block{
-  outline-color: #ea3c53
+.block {
+  outline-color: #ea3c53;
 }
 
-.fire{
+.fire {
   outline-color: #e25822;
 }
 
-.ice{
+.ice {
   outline-color: #86d6d8;
 }
 
-.wind{
+.wind {
   outline-color: #00a86b;
 }
 
-.machine{
+.machine {
   outline-color: #ffff33;
 }
 
@@ -109,7 +110,7 @@
 }
 
 .player-ui {
-  background: url("./../img/panel.png") repeat-x center;
+  background: url("./../img/panel.svg") repeat-x center;
   height: 45%;
 }
 
@@ -165,7 +166,7 @@
 .selections {
   width: 10.1rem;
   height: 4rem;
-  margin-left: .8rem;
+  margin-left: 0.8rem;
   border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
 }
