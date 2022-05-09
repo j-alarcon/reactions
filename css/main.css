@@ -3,7 +3,7 @@
 }
 
 .side-bar {
-  width: 5vw;
+  width: 5%;
   height: 100vh;
 }
 
@@ -46,7 +46,6 @@
 .text-white {
   color: white;
 }
-
 
 .text-shadow {
   text-shadow: 1px 1px black;
