@@ -174,7 +174,7 @@ function activateItems(...items) {
 }
 
 function fillSelect(selections, elements) {
-  activateItems(selections[1], document.getElementById("castReaction"));
+  activateItems(document.getElementById("castReaction"));
   selections[1].innerHTML = "";
   elements.forEach((e) => {
     if (selections[0].options[selections[0].selectedIndex].value != e) {
@@ -197,7 +197,7 @@ function fillMenu(selections) {
     span.addEventListener("click", () => {
       selections[1].selectedIndex = span.getAttribute("data-value");
       resetMenu(submenus[1], checkBox[1]);
-    })
+    });
     submenus[1].appendChild(span);
   }
 }
@@ -214,7 +214,7 @@ function resetMenu(submenu, checkbox) {
 }
 
 window.onload = () => {
-  disableItems(selections[1], document.getElementById("castReaction"));
+  disableItems(document.getElementById("castReaction"));
 };
 
 // Obtain current reaction
