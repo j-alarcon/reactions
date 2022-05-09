@@ -6,6 +6,7 @@
     <title>Reactions</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/position.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
     <script type="module" src="./js/main.js" defer></script>
@@ -24,10 +25,10 @@
               <span id="cpu-name" class="player-name background-white flex justify-end align-center bold">Chanel Terrero</span>
             </div>
           </div>
-          <div class="selections background-grey flex justify-space-around align-center">
-            <div class="option outline-white">
+          <div class="selections  background-grey flex justify-space-around align-center">
+            <div class="option outline-white block">
             </div>
-            <div class="option outline-white">
+            <div class="option outline-white block">
             </div>
           </div>
         </div>
@@ -57,7 +58,7 @@
             </div>
           </div>
           <div class="selections background-grey flex justify-space-around align-center">
-            <div class="option outline-white flex justify-center align-center">
+            <div class="option outline-white flex justify-center align-center unselected">
               <span class="flex justify-center max-width" id="panel-element-left-player"></span>
               <input type="checkbox" class="checkbox absolute invisible">
               <div class="submenu flex hidden background-white absolute" id="leftSubmenu">
@@ -67,7 +68,7 @@
                 <span data-value="3" class="item-submenu-left">⚙️</span>
               </div>
             </div>
-            <div class="option outline-white flex justify-center align-center">
+            <div class="option outline-white flex justify-center align-center block">
               <span class="flex justify-center max-width" id="panel-element-right-player"></span>
               <input type="checkbox" class="checkbox absolute invisible">
               <div class="submenu flex hidden background-white absolute" id="rightSubmenu">

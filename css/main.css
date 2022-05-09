@@ -43,6 +43,30 @@
   background-color: whitesmoke;
 }
 
+.outline-white {
+  outline: 2px solid whitesmoke;
+}
+
+.block{
+  outline-color: #ea3c53
+}
+
+.fire{
+  outline-color: #e25822;
+}
+
+.ice{
+  outline-color: #86d6d8;
+}
+
+.wind{
+  outline-color: #00a86b;
+}
+
+.machine{
+  outline-color: #ffff33;
+}
+
 .text-white {
   color: white;
 }
@@ -65,10 +89,6 @@
 
 .cover-background {
   background-size: cover;
-}
-
-.outline-white {
-  outline: 2px solid whitesmoke;
 }
 
 .reverse {
@@ -143,9 +163,11 @@
 }
 
 .selections {
-  width: 15rem;
+  width: 10.1rem;
   height: 4rem;
-  border-radius: 13px;
+  margin-left: .8rem;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
 }
 
 .option {
@@ -160,4 +182,12 @@
 
 .middle {
   height: 10vh;
+}
+
+.checkbox {
+  transform: scale(3.2);
+}
+
+.unselected {
+  animation: blinkBorder 3s linear infinite;
 }
