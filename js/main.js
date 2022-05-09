@@ -157,7 +157,11 @@ function calculatePercentage(primaryReaction, secondaryReaction) {
       return primaryReaction.weaknesses[i].percentage;
     }
   }
-  primaryReaction.getName === secondaryReaction.getName ? 3 : 6;
+  if(primaryReaction.getName === secondaryReaction.getName){
+    return 3;
+  } else {
+    return 6;
+  }
 }
 
 function activateItems(...items) {
