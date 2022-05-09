@@ -18,7 +18,10 @@ let selections = [
 
 let elements = ["Fire", "Ice", "Wind", "Machine"];
 
-let options = [document.getElementsByClassName("item-submenu-left"), document.getElementsByClassName("item-submenu-right")]
+let options = [
+  document.getElementsByClassName("item-submenu-left"),
+  document.getElementsByClassName("item-submenu-right"),
+];
 
 let submenus = [
   document.getElementById("leftSubmenu"),
@@ -157,7 +160,7 @@ function calculatePercentage(primaryReaction, secondaryReaction) {
       return primaryReaction.weaknesses[i].percentage;
     }
   }
-  if(primaryReaction.getName === secondaryReaction.getName){
+  if (primaryReaction.getName === secondaryReaction.getName) {
     return 3;
   } else {
     return 6;
@@ -181,12 +184,33 @@ function fillSelect(selections, elements) {
       document.getElementById(selections[1].appendChild(option));
     }
   });
+  fillMenu(selections);
+}
+
+function fillMenu(selections) {
+  submenus[1].innerHTML = "";
+  for (let i = 0; i < selections[1].options.length; i++) {
+    let span = document.createElement("span");
+    span.setAttribute("data-value", i);
+    span.classList.add("item-submenu-right");
+    span.innerText = selections[1].options[i].innerText;
+    span.addEventListener("click", () => {
+      selections[1].selectedIndex = span.getAttribute("data-value");
+      resetMenu(submenus[1], checkBox[1]);
+    })
+    submenus[1].appendChild(span);
+  }
 }
 
 function showHideMenu(checkbox, menu) {
   checkbox.checked
     ? menu.classList.remove("hidden")
     : menu.classList.add("hidden");
+}
+
+function resetMenu(submenu, checkbox) {
+  submenu.classList.add("hidden");
+  checkbox.checked = false;
 }
 
 window.onload = () => {
@@ -215,19 +239,15 @@ document.getElementById("castReaction").addEventListener("click", () => {
 });
 
 for (let i = 0; i < options.length; i++) {
-  for(let j = 0; j < options[i].length; j++){
+  for (let j = 0; j < options[i].length; j++) {
     options[i][j].addEventListener("click", () => {
       selections[0].selectedIndex = options[i][j].getAttribute("data-value");
       fillSelect(selections, elements);
       resetMenu(options[i][j].parentNode, checkBox[i]);
     });
-  } 
+  }
 }
 
-function resetMenu(submenu, checkbox){
-  submenu.classList.add("hidden");
-  checkbox.checked = false;
-}
 for (let i = 0; i < checkBox.length; i++) {
   checkBox[i].addEventListener("click", () => {
     showHideMenu(checkBox[i], submenus[i]);
