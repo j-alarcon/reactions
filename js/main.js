@@ -11,19 +11,14 @@ document.getElementById("cpu-name").innerText = generateRandomName(
   surnames
 );
 
-let selections = [
-  document.getElementById("firstReaction"),
-  document.getElementById("secondReaction"),
-];
-
 let options = [
   document.getElementsByClassName("item-submenu-left"),
   document.getElementsByClassName("item-submenu-right"),
 ];
 
 let submenus = [
-  document.getElementById("leftSubmenu"),
-  document.getElementById("rightSubmenu"),
+  document.getElementById("left-submenu"),
+  document.getElementById("right-submenu"),
 ];
 
 let checkBox = document.getElementsByClassName("checkbox");
@@ -178,38 +173,7 @@ function activateItems(...items) {
   }
 }
 
-function fillSelect(selections, elements) {
-  activateItems(checkBox[1], document.getElementById("castReaction"));
-  selections[1].innerHTML = "";
-  elements.forEach((e) => {
-    if (selections[0].options[selections[0].selectedIndex].value != e.name) {
-      let option = document.createElement("option");
-      option.innerText = e.name;
-      option.value = e.name;
-      document.getElementById(selections[1].appendChild(option));
-    }
-  });
-  fillMenu(selections);
-}
-
-function fillMenu(selections) {
-  submenus[1].innerHTML = "";
-  for (let i = 0; i < selections[1].options.length; i++) {
-    let span = document.createElement("span");
-    span.setAttribute("data-value", i);
-    span.classList.add("item-submenu-right");
-    span.innerText = elements.find(
-      (e) => e.name === selections[1].options[i].innerText
-    ).img;
-    span.addEventListener("click", () => {
-      selections[1].selectedIndex = span.getAttribute("data-value");
-      document.getElementById("panel-element-right-player").innerText =
-        span.innerText;
-      resetMenu(submenus[1], checkBox[1]);
-    });
-    submenus[1].appendChild(span);
-  }
-}
+function fillSubmenu(currentElement, elements) {}
 
 function showHideMenu(checkbox, menu) {
   checkbox.checked
@@ -225,42 +189,3 @@ function resetMenu(submenu, checkbox) {
 window.onload = () => {
   disableItems(checkBox[1], document.getElementById("castReaction"));
 };
-
-// Obtain current reaction
-selections.forEach((e) =>
-  e.addEventListener("change", () => {
-    document.getElementById("resultReaction").innerText = getReaction(
-      selections[0].value,
-      selections[1].value,
-      reactions
-    ).getName;
-  })
-);
-
-// Send your reaction and computer ones
-document.getElementById("castReaction").addEventListener("click", () => {
-  playRound(
-    selections,
-    lives,
-    getReaction(selections[0].value, selections[1].value, reactions),
-    getReaction(...computerPlay(elements), reactions)
-  );
-});
-
-for (let i = 0; i < options.length; i++) {
-  for (let j = 0; j < options[i].length; j++) {
-    options[i][j].addEventListener("click", () => {
-      selections[0].selectedIndex = options[i][j].getAttribute("data-value");
-      document.getElementById("panel-element-left-player").innerText =
-        options[i][j].textContent;
-      fillSelect(selections, elements);
-      resetMenu(options[i][j].parentNode, checkBox[i]);
-    });
-  }
-}
-
-for (let i = 0; i < checkBox.length; i++) {
-  checkBox[i].addEventListener("click", () => {
-    showHideMenu(checkBox[i], submenus[i]);
-  });
-}
