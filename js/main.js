@@ -189,3 +189,11 @@ function resetMenu(submenu, checkbox) {
 window.onload = () => {
   disableItems(checkBox[1], document.getElementById("castReaction"));
 };
+
+
+// Add functionality to open and close menus
+Array.from(checkBox).forEach((e, i) => {
+  e.addEventListener("click", () => {
+    showHideMenu(e, submenus[i]);
+  })
+})
