@@ -150,6 +150,8 @@ function computerPlay(elements) {
 }
 
 function playRound(selections, lives, yourReaction, computerReaction) {
+  console.log(yourReaction);
+  console.log(computerReaction);
   lives[0].innerText -= calculatePercentage(computerReaction, yourReaction);
   lives[1].innerText -= calculatePercentage(yourReaction, computerReaction);
   for (let i = 0; i < lives.length; i++) {
@@ -174,12 +176,16 @@ function endGame(lives, selections) {
 function calculatePercentage(primaryReaction, secondaryReaction) {
   for (let i in primaryReaction.weaknesses) {
     if (primaryReaction.weaknesses[i].name === secondaryReaction.getName) {
+      console.log("Entré 1");
       return primaryReaction.weaknesses[i].percentage;
     }
   }
   if (primaryReaction.getName === secondaryReaction.getName) {
+    console.log(primaryReaction.getName);
+    console.log(secondaryReaction.getName);
     return 3;
   } else {
+    console.log("Entré 3");
     return 6;
   }
 }
@@ -209,12 +215,15 @@ function selectItem(
     submenusIcons.innerText = elements.find(
       (u) => u.name === item.getAttribute("data-value")
     ).img;
-    containerSelected.setAttribute("data-value", item.getAttribute("data-value"));
+    containerSelected.setAttribute(
+      "data-value",
+      item.getAttribute("data-value")
+    );
     selectedFirst
       ? setClass(containerSelectionsPlayer[1], "outline-white")
       : setClass(containerSelected, item.getAttribute("data-value"));
     resetMenu(submenus, checkbox);
-    document.getElementById("result-reaction").innerText = getReaction(
+    document.getElementById("result-reaction-player").innerText = getReaction(
       containerSelectionsPlayer[0].getAttribute("data-value"),
       containerSelectionsPlayer[1].getAttribute("data-value"),
       reactions
@@ -316,5 +325,17 @@ options.forEach((e, i) => {
   });
 });
 
-
-
+document.getElementById("cast-reaction").addEventListener("click", () => {
+  let computerReaction = getReaction(...computerPlay(elements), reactions);
+  document.getElementById("result-reaction-computer").innerText = computerReaction.getName;
+  playRound(
+    checkBox,
+    lives,
+    getReaction(
+      containerSelectionsPlayer[0].getAttribute("data-value"),
+      containerSelectionsPlayer[1].getAttribute("data-value"),
+      reactions
+    ),
+    computerReaction
+  );
+});
