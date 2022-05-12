@@ -209,10 +209,16 @@ function selectItem(
     submenusIcons.innerText = elements.find(
       (u) => u.name === item.getAttribute("data-value")
     ).img;
+    containerSelected.setAttribute("data-value", item.getAttribute("data-value"));
     selectedFirst
       ? setClass(containerSelectionsPlayer[1], "outline-white")
       : setClass(containerSelected, item.getAttribute("data-value"));
     resetMenu(submenus, checkbox);
+    document.getElementById("result-reaction").innerText = getReaction(
+      containerSelectionsPlayer[0].getAttribute("data-value"),
+      containerSelectionsPlayer[1].getAttribute("data-value"),
+      reactions
+    ).name;
   });
 }
 
@@ -298,7 +304,7 @@ Array.from(options[0]).forEach((e) => {
 
 // Choose elements in the menus
 options.forEach((e, i) => {
-  Array.from(e).forEach((x, z) => {
+  Array.from(e).forEach((x) => {
     selectItem(
       x,
       submenusIcons[i],
@@ -309,3 +315,6 @@ options.forEach((e, i) => {
     );
   });
 });
+
+
+
