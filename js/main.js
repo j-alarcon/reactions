@@ -16,6 +16,16 @@ let options = [
   document.getElementsByClassName("item-submenu-right"),
 ];
 
+let containerSelectionsComputer = [
+  document.getElementsByClassName("option")[0],
+  document.getElementsByClassName("option")[1],
+];
+
+let containerSelectionsPlayer = [
+  document.getElementsByClassName("option")[2],
+  document.getElementsByClassName("option")[3],
+];
+
 let submenus = [
   document.getElementById("left-submenu"),
   document.getElementById("right-submenu"),
@@ -178,11 +188,26 @@ function activateItems(...items) {
   }
 }
 
-function selectItem(item, submenusIcons, elements, submenus, checkbox) {
+function setClass(element, containerSelected) {
+  containerSelected.classList.remove(
+    containerSelected.classList[containerSelected.classList.length - 1]
+  );
+  containerSelected.classList.add(element.getAttribute("data-value"));
+}
+
+function selectItem(
+  item,
+  submenusIcons,
+  elements,
+  submenus,
+  checkbox,
+  containerSelected
+) {
   item.addEventListener("click", () => {
     submenusIcons.innerText = elements.find(
       (u) => u.name === item.getAttribute("data-value")
     ).img;
+    setClass(item, containerSelected);
     resetMenu(submenus, checkbox);
   });
 }
@@ -192,7 +217,8 @@ function fillSubmenu(
   elements,
   container,
   submenusIcons,
-  checkbox
+  checkbox,
+  containerSelected
 ) {
   activateItems(checkBox[1], document.getElementById("cast-reaction"));
   container[1].innerHTML = "";
@@ -201,7 +227,14 @@ function fillSubmenu(
       let span = document.createElement("span");
       span.innerText = e.img;
       span.setAttribute("data-value", e.name);
-      selectItem(span, submenusIcons, elements, container, checkbox);
+      selectItem(
+        span,
+        submenusIcons,
+        elements,
+        container,
+        checkbox,
+        containerSelected
+      );
       container[1].appendChild(span);
     }
   });
@@ -246,7 +279,8 @@ Array.from(options[0]).forEach((e) => {
       elements,
       submenus,
       submenusIcons[1],
-      checkBox
+      checkBox,
+      containerSelectionsPlayer[1]
     );
   });
 });
@@ -254,6 +288,13 @@ Array.from(options[0]).forEach((e) => {
 // Choose elements in the menus
 options.forEach((e, i) => {
   Array.from(e).forEach((x, z) => {
-    selectItem(x, submenusIcons[i], elements, submenus, checkBox);
+    selectItem(
+      x,
+      submenusIcons[i],
+      elements,
+      submenus,
+      checkBox,
+      containerSelectionsPlayer[0]
+    );
   });
 });
