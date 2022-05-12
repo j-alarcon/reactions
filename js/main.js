@@ -211,6 +211,7 @@ options.forEach((e, i) => {
       submenusIcons[i].innerText = elements.find(
         (u) => u.name === x.getAttribute("data-value")
       ).img;
+      resetMenu(submenus[i], checkBox[i]);
     });
   });
 });
