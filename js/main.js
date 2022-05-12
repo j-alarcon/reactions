@@ -21,6 +21,11 @@ let submenus = [
   document.getElementById("right-submenu"),
 ];
 
+let submenusIcons = [
+  document.getElementById("panel-element-left-player"),
+  document.getElementById("panel-element-right-player"),
+];
+
 let checkBox = document.getElementsByClassName("checkbox");
 
 let lives = [
@@ -147,7 +152,7 @@ function endGame(lives, selections) {
       disableItems(
         selections[0],
         selections[1],
-        document.getElementById("castReaction")
+        document.getElementById("cast-reaction")
       );
     }
   }
@@ -173,7 +178,9 @@ function activateItems(...items) {
   }
 }
 
-function fillSubmenu(currentElement, elements) {}
+function fillSubmenu(currentElement, elements) {
+  activateItems(checkBox[1], document.getElementById("cast-reaction"))
+}
 
 function showHideMenu(checkbox, menu) {
   checkbox.checked
@@ -187,13 +194,23 @@ function resetMenu(submenu, checkbox) {
 }
 
 window.onload = () => {
-  disableItems(checkBox[1], document.getElementById("castReaction"));
+  disableItems(checkBox[1], document.getElementById("cast-reaction"));
 };
 
-
-// Add functionality to open and close menus
+// Open and close menus
 Array.from(checkBox).forEach((e, i) => {
   e.addEventListener("click", () => {
     showHideMenu(e, submenus[i]);
-  })
-})
+  });
+});
+
+// Choose elements in the menus
+options.forEach((e, i) => {
+  Array.from(e).forEach((x, z) => {
+    x.addEventListener("click", () => {
+      submenusIcons[i].innerText = elements.find(
+        (u) => u.name === x.getAttribute("data-value")
+      ).img;
+    });
+  });
+});
