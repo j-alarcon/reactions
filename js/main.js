@@ -36,82 +36,82 @@ let lives = [
 let percentageLife = document.getElementsByClassName("lost-life");
 
 let elements = [
-  { name: "Fire", img: "🔥" },
-  { name: "Ice", img: "❄️" },
-  { name: "Wind", img: "🍃" },
-  { name: "Machine", img: "⚙️" },
+  { name: "fire", img: "🔥" },
+  { name: "ice", img: "❄️" },
+  { name: "wind", img: "🍃" },
+  { name: "machine", img: "⚙️" },
 ];
 
 let reactions = [
   new Reaction(
-    "Water",
-    ["Fire", "Ice"],
+    "water",
+    ["fire", "ice"],
     [
-      { name: "Snowbot", percentage: 18 },
+      { name: "snowbot", percentage: 18 },
       { name: "heatWave", percentage: 18 },
     ],
     [
-      { name: "Explosion", percentage: 15 },
-      { name: "Blizzard", percentage: 15 },
+      { name: "explosion", percentage: 15 },
+      { name: "blizzard", percentage: 15 },
       { name: "heatWave", percentage: 15 },
     ]
   ),
   new Reaction(
-    "HeatWave",
-    ["Fire", "Wind"],
+    "heatWave",
+    ["fire", "wind"],
     [
-      { name: "Snowbot", percentage: 15 },
-      { name: "Water", percentage: 15 },
+      { name: "snowbot", percentage: 15 },
+      { name: "water", percentage: 15 },
     ],
     [
-      { name: "Blizzard", percentage: 15 },
-      { name: "Water", percentage: 18 },
+      { name: "blizzard", percentage: 15 },
+      { name: "water", percentage: 18 },
     ]
   ),
   new Reaction(
-    "Explosion",
-    ["Fire", "Machine"],
+    "explosion",
+    ["fire", "machine"],
     [
-      { name: "Water", percentage: 15 },
-      { name: "Blizzard", percentage: 15 },
+      { name: "water", percentage: 15 },
+      { name: "blizzard", percentage: 15 },
     ],
     [
-      { name: "Hurricane", percentage: 20 },
-      { name: "Snowbot", percentage: 16 },
+      { name: "hurricane", percentage: 20 },
+      { name: "snowbot", percentage: 16 },
     ]
   ),
   new Reaction(
-    "Blizzard",
-    ["Ice", "Wind"],
+    "blizzard",
+    ["ice", "wind"],
     [
       { name: "water", percentage: 15 },
       { name: "heatWave", percentage: 15 },
     ],
     [
-      { name: "Snowbot", percentage: 16 },
-      { name: "Explosion", percentage: 15 },
+      { name: "snowbot", percentage: 16 },
+      { name: "explosion", percentage: 15 },
     ]
   ),
   new Reaction(
-    "Snowbot",
-    ["Ice", "Machine"],
+    "snowbot",
+    ["ice", "machine"],
     [
-      { name: "Blizzard", percentage: 16 },
-      { name: "Explosion", percentage: 16 },
+      { name: "blizzard", percentage: 16 },
+      { name: "explosion", percentage: 16 },
     ],
     [
-      { name: "Water", percentage: 18 },
+      { name: "water", percentage: 18 },
       { name: "heatWave", percentage: 15 },
     ]
   ),
   new Reaction(
-    "Hurricane",
-    ["Machine", "Wind"],
+    "hurricane",
+    ["machine", "wind"],
     [
-      { name: "Explosion", percentage: 20 },
-      { name: "Hurricane", percentage: 15 },
+      { name: "explosion", percentage: 20 },
+      { name: "hurricane", percentage: 15 },
     ],
-    [{ name: "Hurricane", percentage: 15 }]
+    [{ name: "hurricane", percentage: 15 }]
   ),
 ];
 
@@ -178,8 +178,33 @@ function activateItems(...items) {
   }
 }
 
-function fillSubmenu(currentElement, elements) {
-  activateItems(checkBox[1], document.getElementById("cast-reaction"))
+function selectItem(item, submenusIcons, elements, submenus, checkbox) {
+  item.addEventListener("click", () => {
+    submenusIcons.innerText = elements.find(
+      (u) => u.name === item.getAttribute("data-value")
+    ).img;
+    resetMenu(submenus, checkbox);
+  });
+}
+
+function fillSubmenu(
+  currentElement,
+  elements,
+  container,
+  submenusIcons,
+  checkbox
+) {
+  activateItems(checkBox[1], document.getElementById("cast-reaction"));
+  container[1].innerHTML = "";
+  elements.forEach((e) => {
+    if (e.name != currentElement) {
+      let span = document.createElement("span");
+      span.innerText = e.img;
+      span.setAttribute("data-value", e.name);
+      selectItem(span, submenusIcons, elements, container, checkbox);
+      container[1].appendChild(span);
+    }
+  });
 }
 
 function showHideMenu(checkbox, menu) {
@@ -189,12 +214,21 @@ function showHideMenu(checkbox, menu) {
 }
 
 function resetMenu(submenu, checkbox) {
-  submenu.classList.add("hidden");
-  checkbox.checked = false;
+  for (let i = 0; i < submenu.length; i++) {
+    submenu[i].classList.add("hidden");
+    checkbox[i].checked = false;
+  }
+}
+
+function resetCheckbox(...checkboxs) {
+  for (let i = 0; i < checkboxs.length; i++) {
+    checkboxs[i].checked = false;
+  }
 }
 
 window.onload = () => {
   disableItems(checkBox[1], document.getElementById("cast-reaction"));
+  resetCheckbox(...checkBox);
 };
 
 // Open and close menus
@@ -204,14 +238,22 @@ Array.from(checkBox).forEach((e, i) => {
   });
 });
 
+// Fill right submenu according to first selection
+Array.from(options[0]).forEach((e) => {
+  e.addEventListener("click", () => {
+    fillSubmenu(
+      e.getAttribute("data-value"),
+      elements,
+      submenus,
+      submenusIcons[1],
+      checkBox
+    );
+  });
+});
+
 // Choose elements in the menus
 options.forEach((e, i) => {
   Array.from(e).forEach((x, z) => {
-    x.addEventListener("click", () => {
-      submenusIcons[i].innerText = elements.find(
-        (u) => u.name === x.getAttribute("data-value")
-      ).img;
-      resetMenu(submenus[i], checkBox[i]);
-    });
+    selectItem(x, submenusIcons[i], elements, submenus, checkBox);
   });
 });
