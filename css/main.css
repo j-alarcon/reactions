@@ -21,7 +21,7 @@
 
 .background-space {
   background-color: #37425b;
-  background-image: url("../img/space.svg");
+  background-image: url("../img/background/space.svg");
 }
 
 .background-grey {
@@ -110,7 +110,7 @@
 }
 
 .player-ui {
-  background: url("./../img/panel.svg") repeat-x center;
+  background: url("./../img/background/panel.svg") repeat-x center;
   height: 45%;
 }
 
