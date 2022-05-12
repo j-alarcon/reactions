@@ -21,7 +21,7 @@
 
 .background-space {
   background-color: #37425b;
-  background-image: url("../img/background/space.svg");
+  background-image: url("../img/backgroundspace.svg");
 }
 
 .background-grey {
@@ -44,8 +44,12 @@
   background-color: whitesmoke;
 }
 
-.outline-white {
-  outline: 2px solid whitesmoke;
+.outline {
+  outline: 2px solid;
+}
+
+.outline-white{
+  outline-color: white;
 }
 
 .block {

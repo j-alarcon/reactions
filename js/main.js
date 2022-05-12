@@ -11,6 +11,8 @@ document.getElementById("cpu-name").innerText = generateRandomName(
   surnames
 );
 
+let selectedFirst;
+
 let options = [
   document.getElementsByClassName("item-submenu-left"),
   document.getElementsByClassName("item-submenu-right"),
@@ -188,11 +190,11 @@ function activateItems(...items) {
   }
 }
 
-function setClass(element, containerSelected) {
+function setClass(containerSelected, className) {
   containerSelected.classList.remove(
     containerSelected.classList[containerSelected.classList.length - 1]
   );
-  containerSelected.classList.add(element.getAttribute("data-value"));
+  containerSelected.classList.add(className);
 }
 
 function selectItem(
@@ -207,7 +209,9 @@ function selectItem(
     submenusIcons.innerText = elements.find(
       (u) => u.name === item.getAttribute("data-value")
     ).img;
-    setClass(item, containerSelected);
+    selectedFirst
+      ? setClass(containerSelectionsPlayer[1], "outline-white")
+      : setClass(containerSelected, item.getAttribute("data-value"));
     resetMenu(submenus, checkbox);
   });
 }
@@ -222,6 +226,12 @@ function fillSubmenu(
 ) {
   activateItems(checkBox[1], document.getElementById("cast-reaction"));
   container[1].innerHTML = "";
+
+  if (selectedFirst) {
+    setClass(containerSelected, "outline-white");
+    selectedFirst = false;
+  }
+
   elements.forEach((e) => {
     if (e.name != currentElement) {
       let span = document.createElement("span");
@@ -262,6 +272,7 @@ function resetCheckbox(...checkboxs) {
 window.onload = () => {
   disableItems(checkBox[1], document.getElementById("cast-reaction"));
   resetCheckbox(...checkBox);
+  selectedFirst = true;
 };
 
 // Open and close menus
