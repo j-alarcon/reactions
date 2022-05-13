@@ -2,6 +2,14 @@
   width: 100%;
 }
 
+.item-table{
+  width: 6rem;
+  height: 6rem;
+  border-radius: 4rem;
+  background-color: white;
+  outline: .3rem solid;
+}
+
 .side-bar {
   width: 5%;
   height: 100vh;
@@ -92,7 +100,7 @@
   outline-color: #104a5b;
 }
 
-.heat-wave{
+.heatWave{
   outline-color: #ee4a48
 }
 
@@ -121,7 +129,13 @@
 }
 
 .icon-menu{
+  width: 2rem;
   height: 2rem;
+}
+
+.icon-table{
+  width: 5rem;
+  height: 5rem;
 }
 
 .reverse {
@@ -278,4 +292,8 @@
   background-repeat: no-repeat;
   border: .2rem solid #e25822;;
   
+}
+
+.table{
+  height: 35vh;
 }

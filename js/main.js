@@ -229,11 +229,12 @@ function selectItem(
       : setClass(containerSelected, item.getAttribute("data-value"));
     resetMenu(submenus, checkbox);
     if (containerSelectionsPlayer[1].getAttribute("data-value")) {
-        document.getElementById("result-reaction-player").innerText = getReaction(
-        containerSelectionsPlayer[0].getAttribute("data-value"),
-        containerSelectionsPlayer[1].getAttribute("data-value"),
-        reactions
-      ).getName;
+        let reaction = getReaction(
+          containerSelectionsPlayer[0].getAttribute("data-value"),
+          containerSelectionsPlayer[1].getAttribute("data-value"),
+          reactions);
+      document.getElementById("result-reaction-player").src = reaction.getImg;
+      setClass(document.getElementById("result-reaction-player").parentElement, reaction.getName);
     }
   });
 }
@@ -346,8 +347,9 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
   });
   // Get computer reaction
   let computerReaction = getReaction(...computerElements, reactions);
-  document.getElementById("result-reaction-computer").innerText =
-    computerReaction.getName;
+  document.getElementById("result-reaction-computer").src =
+    computerReaction.getImg;
+  setClass(document.getElementById("result-reaction-computer").parentElement, computerReaction.getName);
   // Get player reaction
   let playerReaction = getReaction(
     containerSelectionsPlayer[0].getAttribute("data-value"),
