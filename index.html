@@ -25,7 +25,7 @@
               <span id="cpu-name" class="player-name background-white flex justify-end align-center bold">Chanel Terrero</span>
             </div>
           </div>
-          <div class="selections  background-grey flex justify-space-around align-center">
+          <div class="selections background-grey flex justify-space-around align-center">
             <div class="option outline block">
             </div>
             <div class="option outline block">
@@ -34,9 +34,9 @@
         </div>
       </div>
       <div class="middle flex justify-center align-center">
-          <span id="result-reaction-player">Player: ?</span>
+          <span id="result-reaction-player"></span>
           <button disabled id="cast-reaction">Cast your reaction</button>
-          <span id="result-reaction-computer">Computer: ?</span>
+          <span id="result-reaction-computer"></span>
         </div> 
       </div>
       <div class="player-ui flex justify-center align-center max-width">
@@ -50,22 +50,22 @@
               <span class="player-name background-white flex justify-end align-center bold">You</span>
             </div>
           </div>
+          <div class="submenu flex justify-center align-center direction-column hidden background-white absolute" id="left-submenu">
+            <span data-value="fire" class="item-submenu-left flex justify-center align-center">🔥</span>
+            <span data-value="ice" class="item-submenu-left flex justify-center align-center">❄️</span>
+            <span data-value="wind" class="item-submenu-left flex justify-center align-center">🍃</span>
+            <span data-value="machine" class="item-submenu-left flex justify-center align-center">⚙️</span>
+          </div>
+          <div class="submenu flex justify-center align-center direction-column hidden background-white absolute" id="right-submenu">
+          </div>
           <div class="selections background-grey flex justify-space-around align-center">
             <div class="option outline flex justify-center align-center unselected">
               <span class="flex justify-center max-width" id="panel-element-left-player"></span>
               <input type="checkbox" class="checkbox absolute invisible">
-              <div class="submenu flex hidden background-white absolute" id="left-submenu">
-                <span data-value="fire" class="item-submenu-left">🔥</span>
-                <span data-value="ice" class="item-submenu-left">❄️</span>
-                <span data-value="wind" class="item-submenu-left">🍃</span>
-                <span data-value="machine" class="item-submenu-left">⚙️</span>
-              </div>
             </div>
             <div class="option outline flex justify-center align-center block">
               <span class="flex justify-center max-width" id="panel-element-right-player"></span>
               <input type="checkbox" class="checkbox absolute invisible">
-              <div class="submenu flex hidden background-white absolute" id="right-submenu">
-              </div>
             </div>
           </div>
         </div>

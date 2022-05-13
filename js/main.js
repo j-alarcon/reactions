@@ -327,15 +327,12 @@ options.forEach((e, i) => {
 
 document.getElementById("cast-reaction").addEventListener("click", () => {
   let computerReaction = getReaction(...computerPlay(elements), reactions);
-  document.getElementById("result-reaction-computer").innerText = computerReaction.getName;
-  playRound(
-    checkBox,
-    lives,
-    getReaction(
-      containerSelectionsPlayer[0].getAttribute("data-value"),
-      containerSelectionsPlayer[1].getAttribute("data-value"),
-      reactions
-    ),
-    computerReaction
+  let playerReaction = getReaction(
+    containerSelectionsPlayer[0].getAttribute("data-value"),
+    containerSelectionsPlayer[1].getAttribute("data-value"),
+    reactions
   );
+  document.getElementById("result-reaction-computer").innerText =
+    computerReaction.getName;
+  playRound(checkBox, lives, playerReaction, computerReaction);
 });

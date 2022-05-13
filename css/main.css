@@ -21,7 +21,7 @@
 
 .background-space {
   background-color: #37425b;
-  background-image: url("../img/backgroundspace.svg");
+  background-image: url("../img/background/space.svg");
 }
 
 .background-grey {
@@ -119,9 +119,9 @@
 }
 
 .playersContainer {
-  width: 30%;
+  width: 20%;
   height: 15rem;
-  margin-top: 5rem;
+  margin-top: 14vh;
 }
 
 .life {
@@ -195,4 +195,37 @@
 
 .unselected {
   animation: blinkBorder 3s linear infinite;
+}
+
+.submenu{
+  width: 4rem;
+}
+
+#left-submenu{
+  margin-top: 3.8rem;
+  margin-right: 12rem;
+  height: 9rem;
+  border-bottom-left-radius: 13px;
+}
+
+#right-submenu{
+  margin-top: 6.2rem;
+  margin-left: 13.5rem;
+  height: 6.5rem;
+  border-bottom-right-radius: 13px;
+}
+
+.item-submenu-left{
+  width: 100%;
+  height: 25%;
+  padding-right: .5rem;
+}
+
+#right-submenu span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 33.33%;
+  padding-left: .5rem;
 }

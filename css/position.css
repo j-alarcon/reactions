@@ -30,20 +30,16 @@
   position: relative;
 }
 
-.life {
+.submenu {
   z-index: 0;
 }
 
-.photo,
-.container-hp {
+.photo, .life,
+.container-hp,
+.selections {
   z-index: 1;
 }
 
 .container-hp {
   right: 122px;
 }
-
-.submenu {
-  top: 10rem;
-}
-
