@@ -161,6 +161,10 @@ function computerPlay(elements) {
 }
 
 function playRound(selections, lives, yourReaction, computerReaction) {
+  document.getElementById("minusPercentageComputer").innerText =
+    "-" + calculatePercentage(computerReaction, yourReaction) + "%";
+  document.getElementById("minusPercentagePlayer").innerText =
+    "-" + calculatePercentage(yourReaction, computerReaction) + "%";
   lives[0].innerText -= calculatePercentage(computerReaction, yourReaction);
   lives[1].innerText -= calculatePercentage(yourReaction, computerReaction);
   for (let i = 0; i < lives.length; i++) {
@@ -177,6 +181,7 @@ function endGame(lives, selections) {
         selections[1],
         document.getElementById("cast-reaction")
       );
+      document.getElementById("reset").removeAttribute("disabled");
     }
   }
 }
@@ -303,7 +308,7 @@ function resetCheckbox(...checkboxs) {
 }
 
 window.onload = () => {
-  disableItems(checkBox[1], document.getElementById("cast-reaction"));
+  disableItems(checkBox[1], document.getElementById("cast-reaction"), document.getElementById("reset"));
   resetCheckbox(...checkBox);
   selectedFirst = true;
 };
@@ -366,5 +371,15 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
     reactions
   );
 
+  Array.from(document.getElementsByClassName("minusPercentage")).forEach(
+    (e) => {
+      e.classList.remove("hidden");
+    }
+  );
+
   playRound(checkBox, lives, playerReaction, computerReaction);
 });
+
+document.getElementById("reset").addEventListener("click", e => {
+  window.location.reload();
+})

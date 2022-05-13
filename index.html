@@ -19,6 +19,7 @@
       <div class="player-ui reverse flex justify-center align-center max-width">
         <div class="playersContainer reverse flex direction-column justify-center align-center">
           <div>
+            <div class="minusPercentage absolute hidden" id="minusPercentageComputer"></div>
             <div class="life background-green outline outline-white absolute">
               <div class="lost-life background-red"></div>
             </div>
@@ -38,11 +39,11 @@
         </div>
       </div>
       <div class="middle flex justify-center align-center">
-        <div class="table absolute flex direction-column justify-space-around align-center outline-white">
-          <span class="item-table flex justify-center align-center outline-white">
+        <div class="table absolute flex direction-column justify-space-around align-center">
+          <span class="item-table flex justify-center align-center outline-grey">
             <img id="result-reaction-computer" class="icon-table" src="" alt="">
           </span>
-          <span class="item-table flex justify-center align-center outline-white">
+          <span class="item-table flex justify-center align-center outline-grey">
             <img id="result-reaction-player" class="icon-table" src="" alt="">
           </span>
         </div>  
@@ -51,6 +52,7 @@
       <div class="player-ui flex justify-center align-center max-width">
         <div class="playersContainer flex direction-column justify-center align-center">
           <div>
+            <div class="minusPercentage absolute hidden" id="minusPercentagePlayer"></div>
             <div class="life background-green outline outline-white absolute">
               <div class="lost-life background-red"></div>
             </div>
@@ -91,6 +93,7 @@
             </div>
           </div>
         </div>
+        <button id="reset" class="absolute">RESET</button>
       </div>
       <div class="test"></div>
     </main>

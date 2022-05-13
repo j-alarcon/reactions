@@ -10,8 +10,10 @@
   border: 4px solid black;
 }
 
+
+
 .side-bar {
-  width: 5.1%;
+  width: 6%;
   height: 100vh;
 }
 
@@ -58,6 +60,10 @@
 
 .outline-white {
   outline-color: white;
+}
+
+.outline-grey{
+  outline-color: #5c5c5c;
 }
 
 .block {
@@ -204,7 +210,7 @@
 
 .player-name {
   width: 140px;
-  padding: 4px 8px 0 0;
+  padding: .3rem .2rem 0 0;
   margin-top: 106px;
   font-size: 0.65rem;
 }
@@ -317,4 +323,23 @@ img[src=""] {
   background-color: #f2ca4a;
   width: 100%;
   height: 100%;
+}
+
+.minusPercentage{
+  background-color: #ea3c53;
+  padding: .3rem .3rem .3rem .3rem;
+  color: white;
+  font-weight: bold;
+  font-size: .75rem;
+  z-index: 2;
+  outline: 2.5px solid white;
+  margin-left: 1.9rem;
+  margin-top: 1rem;
+  text-shadow: 1px 1px black;
+  border-bottom-right-radius: .5rem;
+}
+
+#reset{
+  bottom: 0;
+  margin-left: 24rem;
 }
