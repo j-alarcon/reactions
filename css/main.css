@@ -3,11 +3,11 @@
 }
 
 .item-table {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 4rem;
+  width: 5rem;
+  height: 5rem;
+  outline: 0.4rem solid;
   background-color: white;
-  outline: 0.3rem solid;
+  border: 4px solid black;
 }
 
 .side-bar {
@@ -134,8 +134,8 @@
 }
 
 .icon-table {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
 }
 
 .reverse {
