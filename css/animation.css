@@ -1,11 +1,47 @@
-@keyframes blinkBorder{
-    0%{
-        outline-color: white;
-    }
-    50%{
-        outline-color: #6d5784;
-    }
-    100%{
-        outline-color: white;
-    }
+@keyframes blinkBorder {
+  0% {
+    outline-color: white;
+  }
+  50% {
+    outline-color: #6d5784;
+  }
+  100% {
+    outline-color: white;
+  }
+}
+
+@keyframes blinkColors {
+  0% {
+    border-color: #e25822;
+  }
+  10% {
+    border-color: #86d6d8;
+  }
+  20% {
+    border-color: #00a86b;
+  }
+  30% {
+    border-color: #c4b212;
+  }
+  40% {
+    border-color: #780a02;
+  }
+  50% {
+    border-color: #65c460;
+  }
+  60% {
+    border-color: #09204a;
+  }
+  70% {
+    border-color: #0092d8;
+  }
+  80% {
+    border-color: #104a5b;
+  }
+  90% {
+    border-color: #ee4a48
+  }
+  100% {
+    border-color: #e25822;
+  }
 }

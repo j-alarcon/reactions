@@ -69,7 +69,31 @@
 }
 
 .machine {
-  outline-color: #ffff33;
+  outline-color: #c4b212;
+}
+
+.explosion{
+  outline-color: #780a02;
+}
+
+.snowbot{
+  outline-color: #65c460;
+}
+
+.blizzard{
+  outline-color: #09204a;
+}
+
+.water{
+  outline-color: #0092d8;
+}
+
+.hurricane{
+  outline-color: #104a5b;
+}
+
+.heat-wave{
+  outline-color: #ee4a48
 }
 
 .text-white {
@@ -201,6 +225,10 @@
   animation: blinkBorder 3s linear infinite;
 }
 
+.active {
+  animation: blinkColors 13s linear infinite;
+}
+
 .submenu{
   width: 4rem;
 }
@@ -232,4 +260,22 @@
   width: 100%;
   height: 33.33%;
   padding-left: .5rem;
+}
+
+#cast-reaction{
+  display: flex;
+  width: 3.6rem;
+  height: 3.6rem;
+  position: absolute;
+  border-radius: 50rem;
+  z-index: 2;
+  background-color: white;
+  border: none;
+  margin-left: 5.8rem;
+  margin-bottom: 2rem;
+  background-image: url("../img/logos/reactions.svg");
+  background-size: 3.2rem;
+  background-repeat: no-repeat;
+  border: .2rem solid #e25822;;
+  
 }
