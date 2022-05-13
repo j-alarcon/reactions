@@ -2,12 +2,12 @@
   width: 100%;
 }
 
-.item-table{
+.item-table {
   width: 6rem;
   height: 6rem;
   border-radius: 4rem;
   background-color: white;
-  outline: .3rem solid;
+  outline: 0.3rem solid;
 }
 
 .side-bar {
@@ -56,7 +56,7 @@
   outline: 2px solid;
 }
 
-.outline-white{
+.outline-white {
   outline-color: white;
 }
 
@@ -80,28 +80,28 @@
   outline-color: #c4b212;
 }
 
-.explosion{
+.explosion {
   outline-color: #780a02;
 }
 
-.snowbot{
+.snowbot {
   outline-color: #65c460;
 }
 
-.blizzard{
+.blizzard {
   outline-color: #09204a;
 }
 
-.water{
+.water {
   outline-color: #0092d8;
 }
 
-.hurricane{
+.hurricane {
   outline-color: #104a5b;
 }
 
-.heatWave{
-  outline-color: #ee4a48
+.heatWave {
+  outline-color: #ee4a48;
 }
 
 .text-white {
@@ -128,12 +128,12 @@
   background-size: cover;
 }
 
-.icon-menu{
+.icon-menu {
   width: 2rem;
   height: 2rem;
 }
 
-.icon-table{
+.icon-table {
   width: 5rem;
   height: 5rem;
 }
@@ -243,48 +243,48 @@
   animation: blinkColors 13s linear infinite;
 }
 
-.submenu{
+.submenu {
   width: 4rem;
 }
 
-#left-submenu{
+#left-submenu {
   margin-top: 3.8rem;
   margin-right: 12rem;
   height: 9rem;
   border-bottom-left-radius: 13px;
 }
 
-#right-submenu{
+#right-submenu {
   margin-top: 6.2rem;
   margin-left: 13.5rem;
   height: 6.5rem;
   border-bottom-right-radius: 13px;
 }
 
-.item-submenu-left{
+.item-submenu-left {
   width: 100%;
   height: 25%;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
 }
 
-#right-submenu span{
+#right-submenu span {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 33.33%;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
-.grayscale{
-  filter:grayscale();
+.grayscale {
+  filter: grayscale();
 }
 
-.no-filter{
+.no-filter {
   filter: none;
 }
 
-#cast-reaction{
+#cast-reaction {
   display: flex;
   width: 3.6rem;
   height: 3.6rem;
@@ -298,16 +298,23 @@
   background-image: url("../img/logos/reactions.svg");
   background-size: 3.2rem;
   background-repeat: no-repeat;
-  border: .2rem solid #e25822;;
-  
-  
+  border: 0.2rem solid #e25822;
 }
 
-
-.table{
-  height: 35vh;
+.middle{
+ height: 250vh;
 }
 
-img[src=""]{
+.table {
+  height: 30vh;
+}
+
+img[src=""] {
   opacity: 0;
+}
+
+.test {
+  background-color: #f2ca4a;
+  width: 100%;
+  height: 100%;
 }
