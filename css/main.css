@@ -297,3 +297,7 @@
 .table{
   height: 35vh;
 }
+
+img[src=""]{
+  opacity: 0;
+}
