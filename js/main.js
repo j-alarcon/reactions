@@ -57,6 +57,7 @@ let elements = [
 let reactions = [
   new Reaction(
     "water",
+    "./img/icons/water.svg",
     ["fire", "ice"],
     [
       { name: "snowbot", percentage: 18 },
@@ -70,6 +71,7 @@ let reactions = [
   ),
   new Reaction(
     "heatWave",
+    "./img/icons/heat-wave.svg",
     ["fire", "wind"],
     [
       { name: "snowbot", percentage: 15 },
@@ -82,6 +84,7 @@ let reactions = [
   ),
   new Reaction(
     "explosion",
+    "./img/icons/explosion.svg",
     ["fire", "machine"],
     [
       { name: "water", percentage: 15 },
@@ -94,6 +97,7 @@ let reactions = [
   ),
   new Reaction(
     "blizzard",
+    "./img/icons/blizzard.svg",
     ["ice", "wind"],
     [
       { name: "water", percentage: 15 },
@@ -106,6 +110,7 @@ let reactions = [
   ),
   new Reaction(
     "snowbot",
+    "./img/icons/snowbot.svg",
     ["ice", "machine"],
     [
       { name: "blizzard", percentage: 16 },
@@ -118,6 +123,7 @@ let reactions = [
   ),
   new Reaction(
     "hurricane",
+    "./img/icons/hurricane.svg",
     ["machine", "wind"],
     [
       { name: "explosion", percentage: 20 },

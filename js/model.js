@@ -1,6 +1,7 @@
 export class Reaction{
-    constructor(name, origin, advantages, weaknesses){
+    constructor(name, img, origin, advantages, weaknesses){
         this.name = name;
+        this.img = img;
         this.origin = origin;
         this.advantages = advantages;
         this.weaknesses = weaknesses;
@@ -8,6 +9,10 @@ export class Reaction{
 
     get getName(){
         return this.name;
+    }
+
+    get getImg(){
+        return this.img;
     }
 
     get getOrigin(){
