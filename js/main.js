@@ -48,10 +48,10 @@ let lives = [
 let percentageLife = document.getElementsByClassName("lost-life");
 
 let elements = [
-  { name: "fire", img: "🔥" },
-  { name: "ice", img: "❄️" },
-  { name: "wind", img: "🍃" },
-  { name: "machine", img: "⚙️" },
+  { name: "fire", img: "./img/icons/fire.svg" },
+  { name: "ice", img: "./img/icons/ice.svg" },
+  { name: "wind", img: "./img/icons/wind.svg" },
+  { name: "machine", img: "./img/icons/machine.svg" },
 ];
 
 let reactions = [
@@ -176,16 +176,12 @@ function endGame(lives, selections) {
 function calculatePercentage(primaryReaction, secondaryReaction) {
   for (let i in primaryReaction.weaknesses) {
     if (primaryReaction.weaknesses[i].name === secondaryReaction.getName) {
-      console.log("Entré 1");
       return primaryReaction.weaknesses[i].percentage;
     }
   }
   if (primaryReaction.getName === secondaryReaction.getName) {
-    console.log(primaryReaction.getName);
-    console.log(secondaryReaction.getName);
     return 3;
   } else {
-    console.log("Entré 3");
     return 6;
   }
 }
@@ -212,7 +208,7 @@ function selectItem(
   containerSelected
 ) {
   item.addEventListener("click", () => {
-    submenusIcons.innerText = elements.find(
+    submenusIcons.src = elements.find(
       (u) => u.name === item.getAttribute("data-value")
     ).img;
     containerSelected.setAttribute(
@@ -250,8 +246,12 @@ function fillSubmenu(
   elements.forEach((e) => {
     if (e.name != currentElement) {
       let span = document.createElement("span");
-      span.innerText = e.img;
       span.setAttribute("data-value", e.name);
+      let image = document.createElement("img");
+      image.src = e.img;
+      image.alt = e.name;
+      image.classList.add("icon-menu");
+      span.appendChild(image);
       selectItem(
         span,
         submenusIcons,
