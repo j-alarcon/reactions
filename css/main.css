@@ -291,6 +291,7 @@
   background-size: 3.2rem;
   background-repeat: no-repeat;
   border: .2rem solid #e25822;;
+  filter:grayscale();
   
 }
 
