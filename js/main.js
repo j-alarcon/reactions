@@ -23,6 +23,11 @@ let containerSelectionsComputer = [
   document.getElementsByClassName("option")[1],
 ];
 
+let submenusIconsComputer = [
+  document.getElementById("panel-element-left-computer"),
+  document.getElementById("panel-element-right-computer"),
+];
+
 let containerSelectionsPlayer = [
   document.getElementsByClassName("option")[2],
   document.getElementsByClassName("option")[3],
@@ -149,15 +154,13 @@ function getReaction(element1, element2, reactions) {
 function computerPlay(elements) {
   let firstValue, secondValue;
   do {
-    firstValue = elements[Math.floor(Math.random() * 4)].name;
-    secondValue = elements[Math.floor(Math.random() * 4)].name;
+    firstValue = elements[Math.floor(Math.random() * 4)];
+    secondValue = elements[Math.floor(Math.random() * 4)];
   } while (firstValue === secondValue);
   return [firstValue, secondValue];
 }
 
 function playRound(selections, lives, yourReaction, computerReaction) {
-  console.log(yourReaction);
-  console.log(computerReaction);
   lives[0].innerText -= calculatePercentage(computerReaction, yourReaction);
   lives[1].innerText -= calculatePercentage(yourReaction, computerReaction);
   for (let i = 0; i < lives.length; i++) {
@@ -225,11 +228,13 @@ function selectItem(
       ? setClass(containerSelectionsPlayer[1], "outline-white")
       : setClass(containerSelected, item.getAttribute("data-value"));
     resetMenu(submenus, checkbox);
-    document.getElementById("result-reaction-player").innerText = getReaction(
-      containerSelectionsPlayer[0].getAttribute("data-value"),
-      containerSelectionsPlayer[1].getAttribute("data-value"),
-      reactions
-    ).name;
+    if (containerSelectionsPlayer[1].getAttribute("data-value")) {
+        document.getElementById("result-reaction-player").innerText = getReaction(
+        containerSelectionsPlayer[0].getAttribute("data-value"),
+        containerSelectionsPlayer[1].getAttribute("data-value"),
+        reactions
+      ).getName;
+    }
   });
 }
 
@@ -332,13 +337,23 @@ options.forEach((e, i) => {
 });
 
 document.getElementById("cast-reaction").addEventListener("click", () => {
-  let computerReaction = getReaction(...computerPlay(elements), reactions);
+  // Get computer elements selected
+  let computerElements = [];
+  computerPlay(elements).forEach((e, i) => {
+    submenusIconsComputer[i].src = e.img;
+    setClass(containerSelectionsComputer[i], e.name)
+    computerElements.push(e.name);
+  });
+  // Get computer reaction
+  let computerReaction = getReaction(...computerElements, reactions);
+  document.getElementById("result-reaction-computer").innerText =
+    computerReaction.getName;
+  // Get player reaction
   let playerReaction = getReaction(
     containerSelectionsPlayer[0].getAttribute("data-value"),
     containerSelectionsPlayer[1].getAttribute("data-value"),
     reactions
   );
-  document.getElementById("result-reaction-computer").innerText =
-    computerReaction.getName;
+
   playRound(checkBox, lives, playerReaction, computerReaction);
 });
