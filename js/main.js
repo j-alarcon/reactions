@@ -229,12 +229,18 @@ function selectItem(
       : setClass(containerSelected, item.getAttribute("data-value"));
     resetMenu(submenus, checkbox);
     if (containerSelectionsPlayer[1].getAttribute("data-value")) {
-        let reaction = getReaction(
-          containerSelectionsPlayer[0].getAttribute("data-value"),
-          containerSelectionsPlayer[1].getAttribute("data-value"),
-          reactions);
+      activateItems(checkBox[1], document.getElementById("cast-reaction"));
+      setClass(document.getElementById("cast-reaction"), "no-filter");
+      let reaction = getReaction(
+        containerSelectionsPlayer[0].getAttribute("data-value"),
+        containerSelectionsPlayer[1].getAttribute("data-value"),
+        reactions
+      );
       document.getElementById("result-reaction-player").src = reaction.getImg;
-      setClass(document.getElementById("result-reaction-player").parentElement, reaction.getName);
+      setClass(
+        document.getElementById("result-reaction-player").parentElement,
+        reaction.getName
+      );
     }
   });
 }
@@ -247,7 +253,7 @@ function fillSubmenu(
   checkbox,
   containerSelected
 ) {
-  activateItems(checkBox[1], document.getElementById("cast-reaction"));
+  activateItems(checkBox[1]);
   container[1].innerHTML = "";
 
   if (selectedFirst) {
@@ -342,14 +348,17 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
   let computerElements = [];
   computerPlay(elements).forEach((e, i) => {
     submenusIconsComputer[i].src = e.img;
-    setClass(containerSelectionsComputer[i], e.name)
+    setClass(containerSelectionsComputer[i], e.name);
     computerElements.push(e.name);
   });
   // Get computer reaction
   let computerReaction = getReaction(...computerElements, reactions);
   document.getElementById("result-reaction-computer").src =
     computerReaction.getImg;
-  setClass(document.getElementById("result-reaction-computer").parentElement, computerReaction.getName);
+  setClass(
+    document.getElementById("result-reaction-computer").parentElement,
+    computerReaction.getName
+  );
   // Get player reaction
   let playerReaction = getReaction(
     containerSelectionsPlayer[0].getAttribute("data-value"),

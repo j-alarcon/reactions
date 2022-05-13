@@ -276,6 +276,14 @@
   padding-left: .5rem;
 }
 
+.grayscale{
+  filter:grayscale();
+}
+
+.no-filter{
+  filter: none;
+}
+
 #cast-reaction{
   display: flex;
   width: 3.6rem;
@@ -291,9 +299,10 @@
   background-size: 3.2rem;
   background-repeat: no-repeat;
   border: .2rem solid #e25822;;
-  filter:grayscale();
+  
   
 }
+
 
 .table{
   height: 35vh;
