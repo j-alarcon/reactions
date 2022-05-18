@@ -1,4 +1,4 @@
-<strong>This game has been developed using HTML, CSS and javaScript</strong>, in order to practice and develop my skills in these languages.
+<strong>This game has been developed using HTML, CSS and JavaScript</strong>, in order to practice and develop my skills in these languages.
 
 Have you ever played rock-paper-scissors before? Are you tired of picking always the same three options? This is probably your game. Let's react! ✅
 
