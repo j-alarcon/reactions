@@ -161,9 +161,9 @@ function computerPlay(elements) {
 }
 
 function playRound(selections, lives, yourReaction, computerReaction) {
-  document.getElementById("minusPercentageComputer").innerText =
+  document.getElementById("minus-percentage-computer").innerText =
     "-" + calculatePercentage(computerReaction, yourReaction) + "%";
-  document.getElementById("minusPercentagePlayer").innerText =
+  document.getElementById("minus-percentage-player").innerText =
     "-" + calculatePercentage(yourReaction, computerReaction) + "%";
   lives[0].innerText -= calculatePercentage(computerReaction, yourReaction);
   lives[1].innerText -= calculatePercentage(yourReaction, computerReaction);
@@ -182,6 +182,10 @@ function endGame(lives, selections) {
         document.getElementById("cast-reaction")
       );
       document.getElementById("reset").removeAttribute("disabled");
+      document.getElementById("reset").parentElement.classList.remove("hide");
+      containerSelectionsPlayer.forEach((e) => {
+        e.classList.add("hide");
+      });
     }
   }
 }
@@ -308,7 +312,11 @@ function resetCheckbox(...checkboxs) {
 }
 
 window.onload = () => {
-  disableItems(checkBox[1], document.getElementById("cast-reaction"), document.getElementById("reset"));
+  disableItems(
+    checkBox[1],
+    document.getElementById("cast-reaction"),
+    document.getElementById("reset")
+  );
   resetCheckbox(...checkBox);
   selectedFirst = true;
 };
@@ -371,7 +379,7 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
     reactions
   );
 
-  Array.from(document.getElementsByClassName("minusPercentage")).forEach(
+  Array.from(document.getElementsByClassName("minus-percentage")).forEach(
     (e) => {
       e.classList.remove("hidden");
     }
@@ -380,6 +388,6 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
   playRound(checkBox, lives, playerReaction, computerReaction);
 });
 
-document.getElementById("reset").addEventListener("click", e => {
+document.getElementById("reset").addEventListener("click", (e) => {
   window.location.reload();
-})
+});

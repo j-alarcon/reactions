@@ -34,12 +34,22 @@
   z-index: 0;
 }
 
-.photo, .life,
+.photo,
+.life,
 .container-hp,
 .selections {
   z-index: 1;
 }
 
+.minus-percentage,
+#cast-reaction {
+  z-index: 2;
+}
+
+#cast-reaction {
+  bottom: 8vh;
+}
+
 .container-hp {
-  right: 122px;
+  right: 13.2vh;
 }

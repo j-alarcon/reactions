@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reactions - Let's react! 🧪</title>
     <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/position.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/animation.css" />
-    <link rel="stylesheet" href="./css/position.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
     <link rel="icon" href="./img/logos/reactions-mobile.svg"/>
     <script type="module" src="./js/main.js" defer></script>
   </head>
   <body class="flex align-center max-height background-space overflow-hidden">
-    <div class="side-bar background-black"></div>
+    <div class="side-bar max-height background-black"></div>
     <main class="flex direction-column max-width max-height">
-      <div class="test"></div>
       <div class="player-ui reverse flex justify-center align-center max-width">
         <div class="playersContainer reverse flex direction-column justify-center align-center">
           <div>
-            <div class="minusPercentage absolute hidden" id="minusPercentageComputer"></div>
+            <div class="minus-percentage text-white text-shadow absolute background-crimson white-text hidden" id="minus-percentage-computer"></div>
             <div class="life background-green outline outline-white absolute">
               <div class="lost-life background-red"></div>
             </div>
             <div class="photo border-white relative" id="computer-photo">
-              <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center absolute"" id="computer-hp">100</span>
+              <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center absolute" id="computer-hp">100</span>
               <span id="cpu-name" class="player-name background-white flex justify-end align-center bold">Chanel Terrero</span>
             </div>
           </div>
@@ -38,12 +38,12 @@
           </div>
         </div>
       </div>
-      <div class="middle flex justify-center align-center">
+      <div class="middle flex justify-center align-center relative">
         <div class="table absolute flex direction-column justify-space-around align-center">
-          <span class="item-table flex justify-center align-center outline-grey">
+          <span class="item-table flex justify-center align-center background-white outline-grey">
             <img id="result-reaction-computer" class="icon-table" src="" alt="">
           </span>
-          <span class="item-table flex justify-center align-center outline-grey">
+          <span class="item-table flex justify-center align-center background-white outline-grey">
             <img id="result-reaction-player" class="icon-table" src="" alt="">
           </span>
         </div>  
@@ -52,51 +52,54 @@
       <div class="player-ui flex justify-center align-center max-width">
         <div class="playersContainer flex direction-column justify-center align-center">
           <div>
-            <div class="minusPercentage absolute hidden" id="minusPercentagePlayer"></div>
+            <div class="minus-percentage text-white text-shadow bold absolute background-crimson " id="minus-percentage-player">-2%</div>
             <div class="life background-green outline outline-white absolute">
               <div class="lost-life background-red"></div>
             </div>
             <div class="photo border-white relative" id="player-photo">
-              <button disabled class="active grayscale" id="cast-reaction"></button>
+              <button disabled class="flex absolute active grayscale" id="cast-reaction"></button>
               <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center absolute" id="player-hp">100</span>
               <span class="player-name background-white flex justify-end align-center bold">You</span>
             </div>
           </div>
           <div class="submenu flex justify-center align-center direction-column hidden background-white absolute" id="left-submenu">
-            <span data-value="fire" class="item-submenu-left flex justify-center align-center">
+            <span data-value="fire" class="item-submenu-left flex justify-center align-center max-width">
               <img class="icon-menu" src="./img/icons/fire.svg" alt="fire">
             </span>
-            <span data-value="ice" class="item-submenu-left flex justify-center align-center">
+            <span data-value="ice" class="item-submenu-left flex justify-center align-center max-width">
               <img class="icon-menu" src="./img/icons/ice.svg" alt="ice">
             </span>
-            <span data-value="wind" class="item-submenu-left flex justify-center align-center">
+            <span data-value="wind" class="item-submenu-left flex justify-center align-center max-width">
               <img class="icon-menu" src="./img/icons/wind.svg" alt="wind">
             </span>
-            <span data-value="machine" class="item-submenu-left flex justify-center align-center">
+            <span data-value="machine" class="item-submenu-left flex justify-center align-center max-width">
               <img class="icon-menu" src="./img/icons/machine.svg" alt="machine">
             </span>
           </div>
           <div class="submenu flex justify-center align-center direction-column hidden background-white absolute" id="right-submenu">
           </div>
-          <div class="selections background-grey flex justify-space-around align-center">
+          <div class="selections background-grey flex justify-space-around align-center relative"> 
             <div class="option outline flex justify-center align-center unselected">
-              <span class="flex justify-center max-width" >
+              <span class="flex justify-center align-center max-width" >
                 <img id="panel-element-left-player" class="icon-menu" src="" alt="">
               </span>
               <input type="checkbox" class="checkbox absolute invisible">
             </div>
             <div class="option outline flex justify-center align-center block">
-              <span class="flex justify-center max-width" >
+              <span class="flex justify-center align-center max-width" >
                 <img id="panel-element-right-player" class="icon-menu" src="" alt="">
               </span>
               <input type="checkbox" class="checkbox absolute invisible">
             </div>
+            <div class="option outline justify-center align-center unselected hide">
+              <span id="reset" class="flex justify-center align-center max-width" >
+                <img class="icon-menu" src="" alt="">
+              </span>
+            </div>
           </div>
         </div>
-        <button id="reset" class="absolute">RESET</button>
       </div>
-      <div class="test"></div>
     </main>
-    <div class="side-bar background-black"></div>
+    <div class="side-bar max-height background-black"></div>
   </body>
 </html>
