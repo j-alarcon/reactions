@@ -16,6 +16,11 @@
   <body class="flex align-center max-height background-space overflow-hidden">
     <div class="side-bar max-height background-black"></div>
     <main class="flex direction-column max-width max-height">
+      <div class="difficulties absolute flex justify-space-around text-white">
+        <div class="difficulty pointer flex justify-center align-center" id="easy">EASY</div>
+        <div class="difficulty pointer flex justify-center align-center" id="normal">NORMAL</div>
+        <div class="difficulty pointer flex justify-center align-center" id="hard">HARD</div>
+      </div>
       <div class="player-ui reverse flex justify-center align-center max-width">
         <div class="playersContainer reverse flex direction-column justify-center align-center">
           <div>
@@ -57,23 +62,23 @@
               <div class="lost-life background-red"></div>
             </div>
             <div class="photo border-white relative" id="player-photo">
-              <button disabled class="flex absolute active grayscale" id="cast-reaction"></button>
+              <button disabled class="flex absolute active grayscale pointer" id="cast-reaction"></button>
               <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center absolute" id="player-hp">100</span>
               <span class="player-name background-white flex justify-end align-center bold">You</span>
             </div>
           </div>
           <div class="submenu flex justify-center align-center direction-column hidden background-white absolute" id="left-submenu">
             <span data-value="fire" class="item-submenu-left flex justify-center align-center max-width">
-              <img class="icon-menu" src="./img/icons/fire.svg" alt="fire">
+              <img class="icon-menu pointer" src="./img/icons/fire.svg" alt="fire">
             </span>
             <span data-value="ice" class="item-submenu-left flex justify-center align-center max-width">
-              <img class="icon-menu" src="./img/icons/ice.svg" alt="ice">
+              <img class="icon-menu pointer" src="./img/icons/ice.svg" alt="ice">
             </span>
             <span data-value="wind" class="item-submenu-left flex justify-center align-center max-width">
-              <img class="icon-menu" src="./img/icons/wind.svg" alt="wind">
+              <img class="icon-menu pointer" src="./img/icons/wind.svg" alt="wind">
             </span>
             <span data-value="machine" class="item-submenu-left flex justify-center align-center max-width">
-              <img class="icon-menu" src="./img/icons/machine.svg" alt="machine">
+              <img class="icon-menu pointer" src="./img/icons/machine.svg" alt="machine">
             </span>
           </div>
           <div class="submenu flex justify-center align-center direction-column hidden background-white absolute" id="right-submenu">
@@ -83,16 +88,16 @@
               <span class="flex justify-center align-center max-width" >
                 <img id="panel-element-left-player" class="icon-menu" src="" alt="">
               </span>
-              <input type="checkbox" class="checkbox absolute invisible">
+              <input type="checkbox" class="checkbox pointer absolute invisible">
             </div>
             <div class="option outline flex justify-center align-center block">
               <span class="flex justify-center align-center max-width" >
                 <img id="panel-element-right-player" class="icon-menu" src="" alt="">
               </span>
-              <input type="checkbox" class="checkbox absolute invisible">
+              <input type="checkbox" class="checkbox pointer absolute invisible">
             </div>
             <div class="option outline justify-center align-center unselected hide">
-              <span id="reset" class="flex justify-center align-center max-width" >
+              <span id="reset" class="flex justify-center align-center max-width pointer" >
                 <img class="icon-menu" src="" alt="">
               </span>
             </div>
