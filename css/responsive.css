@@ -1,7 +1,0 @@
-@media screen and (max-height: 650px) {
-  * {
-    background-color: black;
-    visibility: hidden;
-    overflow: hidden;
-  }
-}
