@@ -39,7 +39,6 @@ export let names = [
   "Diego",
   "Juan",
   "Jose",
-  "Cristobal",
   "Fernanda",
   "Javiera",
   "Jan",
