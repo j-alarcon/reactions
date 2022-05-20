@@ -23,7 +23,7 @@
 }
 
 .background-space {
-  background: url("../img/background/space.svg") center/cover;
+  background: url("../img/background/space.svg") repeat-x 40vh/180vh;
   background-color: #37425b;
 }
 
