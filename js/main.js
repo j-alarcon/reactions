@@ -160,6 +160,7 @@ function changeDifficulty(currentElement) {
   );
   localStorage.setItem("difficulty", currentElement.id);
   setClass(currentElement, "selected");
+  window.location.reload();
 }
 
 function computerPlay(elements, difficulty, playerReaction) {
