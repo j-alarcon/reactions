@@ -75,6 +75,13 @@
   outline-color: white;
 }
 
+.item-table {
+  width: 11vh;
+  height: 11vh;
+  outline: 0.6vh solid;
+  border: 0.6vh solid black;
+}
+
 .outline-grey {
   outline-color: #5c5c5c;
 }
@@ -313,13 +320,6 @@ body {
 
 .table {
   height: 35vh;
-}
-
-.item-table {
-  width: 11vh;
-  height: 11vh;
-  outline: 0.6vh solid;
-  border: 0.6vh solid black;
 }
 
 .difficulties {
