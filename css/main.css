@@ -324,12 +324,9 @@ body {
   background-color: white;
 }
 
-.middle {
-  height: 60vh;
-}
-
 .table {
-  height: 35vh;
+  height: 30vh;
+  margin-top: 7vh;
 }
 
 .difficulties {
