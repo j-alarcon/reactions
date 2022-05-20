@@ -177,6 +177,10 @@ function computerPlay(elements, difficulty, playerReaction) {
       }
       break;
     case "normal":
+      do {
+        values[0] = elements[Math.floor(Math.random() * 4)];
+        values[1] = elements[Math.floor(Math.random() * 4)];
+      } while (values[0] === values[1]);
       break;
     case "hard":
       if (Math.round(Math.random() * 10 > 4)) {
