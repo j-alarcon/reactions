@@ -261,7 +261,7 @@ function setClass(containerSelected, className) {
 
 function selectItem(
   item,
-  submenusIcons,
+  selectedSubmenuIcon,
   elements,
   submenus,
   checkbox,
@@ -269,13 +269,21 @@ function selectItem(
 ) {
   item.addEventListener("click", () => {
     reproduceSound("../sounds/pop2.mp3");
-    submenusIcons.src = elements.find(
+    selectedSubmenuIcon.src = elements.find(
       (u) => u.name === item.getAttribute("data-value")
     ).img;
     containerSelected.setAttribute(
       "data-value",
       item.getAttribute("data-value")
     );
+    if (
+      containerSelectionsPlayer[0].getAttribute("data-value") ===
+      containerSelectionsPlayer[1].getAttribute("data-value")
+    ) {
+      submenusIcons[1].src = submenus[1].children[0].children[0].src;
+      containerSelectionsPlayer[1].setAttribute("data-value", submenus[1].children[0].getAttribute("data-value"));
+      setClass(containerSelectionsPlayer[1], containerSelectionsPlayer[1].getAttribute("data-value"));
+    }
     selectedFirst
       ? setClass(containerSelectionsPlayer[1], "outline-white")
       : setClass(containerSelected, item.getAttribute("data-value"));
