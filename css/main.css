@@ -201,10 +201,19 @@ body {
   background: url("./../img/background/panel.svg") repeat-x center/cover;
 }
 
-.playersContainer {
+.bottom-container-player-ui{
+  background-color: #f2ca4a;
+  height: 30vh;
+}
+
+.players-container {
   width: 23vh;
   height: 27vh;
   margin-top: 16vh;
+}
+
+.first-ui{
+ height: 35vh;
 }
 
 .life {
