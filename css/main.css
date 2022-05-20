@@ -183,10 +183,6 @@ body {
   font-family: "Poppins";
 }
 
-.side-bar {
-  width: 6%;
-}
-
 .icon-menu {
   width: 4vh;
   height: 4vh;
@@ -330,7 +326,7 @@ body {
 }
 
 .difficulty {
-  width: 33.33%;
+  width: 33.34%;
 }
 
 .difficulty:hover {
