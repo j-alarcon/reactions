@@ -3,13 +3,9 @@ import {
   names,
   surnames,
   generateRandomName,
+  generateRandomNumber,
   disableItems,
 } from "./utility.js";
-
-document.getElementById("cpu-name").innerText = generateRandomName(
-  names,
-  surnames
-);
 
 let selectedFirst;
 
@@ -366,6 +362,11 @@ window.onload = () => {
       "selected"
     );
   }
+  document.getElementById("cpu-name").innerText = generateRandomName(
+    names,
+    surnames
+  );
+  document.getElementById("computer-photo").style.backgroundImage = "url('../img/portraits/" + generateRandomNumber(112) + ".jpg')";
   disableItems(
     checkBox[1],
     document.getElementById("cast-reaction"),

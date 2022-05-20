@@ -245,8 +245,8 @@ body {
   border-bottom-right-radius: 2vh;
 }
 
-#computer-photo {
-  background: url("./../img/portraits/zebra.jpg") no-repeat center/cover;
+#computer-photo{
+  background: no-repeat center/cover;
 }
 
 #player-photo {
