@@ -201,7 +201,7 @@ body {
   background: url("./../img/background/panel.svg") repeat-x center/cover;
 }
 
-.bottom-container-player-ui{
+.bottom-container-player-ui {
   background-color: #f2ca4a;
   height: 30vh;
 }
@@ -212,9 +212,9 @@ body {
   margin-top: 16vh;
 }
 
-.first-ui{
- margin-bottom: 7.5vh;
- height: 41vh;
+.first-ui {
+  margin-bottom: 7.5vh;
+  height: 41vh;
 }
 
 .life {
@@ -314,7 +314,7 @@ body {
   padding-left: 1vh;
 }
 
-#cast-reaction{
+#cast-reaction {
   width: 8vh;
   height: 8vh;
   border-radius: 10vh;
@@ -330,7 +330,6 @@ body {
 }
 
 .difficulties {
-  width: 89.3%;
   height: 2.5vh;
   font-size: 1.7vh;
 }

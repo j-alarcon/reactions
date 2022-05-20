@@ -162,13 +162,46 @@ function changeDifficulty(currentElement) {
   setClass(currentElement, "selected");
 }
 
-function computerPlay(elements) {
-  let firstValue, secondValue;
-  do {
-    firstValue = elements[Math.floor(Math.random() * 4)];
-    secondValue = elements[Math.floor(Math.random() * 4)];
-  } while (firstValue === secondValue);
-  return [firstValue, secondValue];
+function computerPlay(elements, difficulty, playerReaction) {
+  let values = [];
+  switch (difficulty) {
+    case "easy":
+      for (let i = 0; i < 2; i++) {
+        values.push(
+          elements.find(
+            (z) =>
+              z.name ===
+              reactions.find(
+                (u) => u.name === playerReaction.advantages[0].name
+              ).getOrigin[i]
+          )
+        );
+      }
+      break;
+    case "normal":
+      break;
+    case "hard":
+      if (Math.round(Math.random() * 10 > 4)) {
+        do {
+          values[0] = elements[Math.floor(Math.random() * 4)];
+          values[1] = elements[Math.floor(Math.random() * 4)];
+        } while (values[0] === values[1]);
+      } else {
+        for (let i = 0; i < 2; i++) {
+          values.push(
+            elements.find(
+              (z) =>
+                z.name ===
+                reactions.find(
+                  (u) => u.name === playerReaction.weaknesses[0].name
+                ).getOrigin[i]
+            )
+          );
+        }
+      }
+      break;
+  }
+  return values;
 }
 
 function playRound(selections, lives, yourReaction, computerReaction) {
@@ -321,7 +354,7 @@ function resetCheckbox(...checkboxs) {
     checkboxs[i].checked = false;
   }
 }
-console.log(localStorage.getItem("difficulty"));
+
 window.onload = () => {
   if (!localStorage.getItem("difficulty")) {
     localStorage.setItem("difficulty", "easy");
@@ -383,9 +416,19 @@ options.forEach((e, i) => {
 });
 
 document.getElementById("cast-reaction").addEventListener("click", () => {
+  // Get player reaction
+  let playerReaction = getReaction(
+    containerSelectionsPlayer[0].getAttribute("data-value"),
+    containerSelectionsPlayer[1].getAttribute("data-value"),
+    reactions
+  );
   // Get computer elements selected
   let computerElements = [];
-  computerPlay(elements).forEach((e, i) => {
+  computerPlay(
+    elements,
+    localStorage.getItem("difficulty"),
+    playerReaction
+  ).forEach((e, i) => {
     submenusIconsComputer[i].src = e.img;
     setClass(containerSelectionsComputer[i], e.name);
     computerElements.push(e.name);
@@ -397,12 +440,6 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
   setClass(
     document.getElementById("result-reaction-computer").parentElement,
     computerReaction.getName
-  );
-  // Get player reaction
-  let playerReaction = getReaction(
-    containerSelectionsPlayer[0].getAttribute("data-value"),
-    containerSelectionsPlayer[1].getAttribute("data-value"),
-    reactions
   );
 
   Array.from(document.getElementsByClassName("minus-percentage")).forEach(
