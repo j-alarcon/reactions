@@ -45,6 +45,8 @@ let submenusIcons = [
 
 let checkBox = document.getElementsByClassName("checkbox");
 
+let difficulties = Array.from(document.getElementsByClassName("difficulty"));
+
 let lives = [
   document.getElementById("computer-hp"),
   document.getElementById("player-hp"),
@@ -149,6 +151,15 @@ function getReaction(element1, element2, reactions) {
       }
     }
   }
+}
+
+function changeDifficulty(currentElement) {
+  setClass(
+    document.getElementById(localStorage.getItem("difficulty")),
+    localStorage.getItem("difficulty")
+  );
+  localStorage.setItem("difficulty", currentElement.id);
+  setClass(currentElement, "selected");
 }
 
 function computerPlay(elements) {
@@ -310,8 +321,17 @@ function resetCheckbox(...checkboxs) {
     checkboxs[i].checked = false;
   }
 }
-
+console.log(localStorage.getItem("difficulty"));
 window.onload = () => {
+  if (!localStorage.getItem("difficulty")) {
+    localStorage.setItem("difficulty", "easy");
+    setClass(difficulties[0], "selected");
+  } else {
+    setClass(
+      document.getElementById(localStorage.getItem("difficulty")),
+      "selected"
+    );
+  }
   disableItems(
     checkBox[1],
     document.getElementById("cast-reaction"),
@@ -320,6 +340,12 @@ window.onload = () => {
   resetCheckbox(...checkBox);
   selectedFirst = true;
 };
+
+difficulties.forEach((e) => {
+  e.addEventListener("click", () => {
+    changeDifficulty(e);
+  });
+});
 
 // Open and close menus
 Array.from(checkBox).forEach((e, i) => {

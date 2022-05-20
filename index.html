@@ -17,9 +17,9 @@
     <div class="side-bar max-height background-black"></div>
     <main class="flex direction-column max-width max-height">
       <div class="difficulties absolute flex justify-space-around text-white">
-        <div class="difficulty pointer flex justify-center align-center" id="easy">EASY</div>
-        <div class="difficulty pointer flex justify-center align-center" id="normal">NORMAL</div>
-        <div class="difficulty pointer flex justify-center align-center" id="hard">HARD</div>
+        <div class="difficulty text-shadow pointer flex justify-center align-center easy" id="easy">EASY</div>
+        <div class="difficulty text-shadow pointer flex justify-center align-center normal" id="normal">NORMAL</div>
+        <div class="difficulty text-shadow pointer flex justify-center align-center hard" id="hard">HARD</div>
       </div>
       <div class="player-ui reverse flex justify-center align-center max-width">
         <div class="playersContainer reverse flex direction-column justify-center align-center">
@@ -62,7 +62,7 @@
               <div class="lost-life background-red"></div>
             </div>
             <div class="photo border-white relative" id="player-photo">
-              <button disabled class="flex absolute active grayscale pointer" id="cast-reaction"></button>
+              <button disabled class="flex absolute active grayscale pointer cast-reaction" id="cast-reaction"></button>
               <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center absolute" id="player-hp">100</span>
               <span class="player-name background-white flex justify-end align-center bold">You</span>
             </div>

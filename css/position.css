@@ -46,6 +46,10 @@
   z-index: 2;
 }
 
+.difficulties{
+  z-index: 3;
+}
+
 #cast-reaction {
   bottom: 8vh;
 }

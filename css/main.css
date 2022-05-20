@@ -51,6 +51,22 @@
   background-color: white;
 }
 
+.easy {
+  background-color: #44b14d;
+}
+
+.normal {
+  background-color: #e2861c;
+}
+
+.hard {
+  background-color: #c43124;
+}
+
+.selected {
+  background-color: #933ee1;
+}
+
 .outline {
   outline: 0.4vh solid;
 }
@@ -139,7 +155,7 @@
   transform: rotate(180deg);
 }
 
-.pointer{
+.pointer {
   cursor: pointer;
 }
 
@@ -281,13 +297,14 @@ body {
   padding-left: 1vh;
 }
 
-#cast-reaction {
+#cast-reaction{
   width: 8vh;
   height: 8vh;
   border-radius: 10vh;
   margin-left: 12vh;
   background: url("../img/logos/reactions.svg") no-repeat center/7vh;
   border: 0.7vh solid #e25822;
+  background-color: white;
 }
 
 .middle {
@@ -306,24 +323,15 @@ body {
 }
 
 .difficulties {
-  width: 30vh;
-  height: 4vh;
+  width: 89.3%;
+  height: 2.5vh;
   font-size: 1.7vh;
-  z-index: 3;
 }
 
 .difficulty {
   width: 33.33%;
 }
 
-#easy {
-  background-color: #a0c591;
-}
-
-#normal {
-  background-color: #f0cf70;
-}
-
-#hard {
-  background-color: #d50000;
+.difficulty:hover {
+  background-color: #752f7d;
 }
