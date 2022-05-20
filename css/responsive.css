@@ -1,12 +1,12 @@
-@media screen and (max-width: 900px){
-    .background-space{
-        background-position: 10% 30%;
-        background-size: 105vh;
-    }
+@media screen and (max-width: 900px) {
+  .background-space {
+    background-position: 10% 30%;
+    background-size: 105vh;
+  }
 }
 
-@media screen and (max-width: 650px){
-      .player-ui {
-        background-position: 45% 50%;
-      }
+@media screen and (max-width: 650px) {
+  .player-ui {
+    background-position: 45% 50%;
+  }
 }

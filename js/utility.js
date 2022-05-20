@@ -193,7 +193,7 @@ export let surnames = [
   "Ito",
 ];
 
-export function reproduceSound(fileName){
+export function reproduceSound(fileName) {
   new Audio(fileName).play();
 }
 

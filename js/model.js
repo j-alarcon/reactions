@@ -1,29 +1,29 @@
-export class Reaction{
-    constructor(name, img, origin, advantages, weaknesses){
-        this.name = name;
-        this.img = img;
-        this.origin = origin;
-        this.advantages = advantages;
-        this.weaknesses = weaknesses;
-    }
+export class Reaction {
+  constructor(name, img, origin, advantages, weaknesses) {
+    this.name = name;
+    this.img = img;
+    this.origin = origin;
+    this.advantages = advantages;
+    this.weaknesses = weaknesses;
+  }
 
-    get getName(){
-        return this.name;
-    }
+  get getName() {
+    return this.name;
+  }
 
-    get getImg(){
-        return this.img;
-    }
+  get getImg() {
+    return this.img;
+  }
 
-    get getOrigin(){
-        return this.origin;
-    }
+  get getOrigin() {
+    return this.origin;
+  }
 
-    get getAdvantages(){
-        return this.advantages;
-    }
+  get getAdvantages() {
+    return this.advantages;
+  }
 
-    get getWeaknesses(){
-        return this.weaknesses;
-    }
+  get getWeaknesses() {
+    return this.weaknesses;
+  }
 }

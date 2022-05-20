@@ -285,8 +285,14 @@ function selectItem(
       containerSelectionsPlayer[1].getAttribute("data-value")
     ) {
       submenusIcons[1].src = submenus[1].children[0].children[0].src;
-      containerSelectionsPlayer[1].setAttribute("data-value", submenus[1].children[0].getAttribute("data-value"));
-      setClass(containerSelectionsPlayer[1], containerSelectionsPlayer[1].getAttribute("data-value"));
+      containerSelectionsPlayer[1].setAttribute(
+        "data-value",
+        submenus[1].children[0].getAttribute("data-value")
+      );
+      setClass(
+        containerSelectionsPlayer[1],
+        containerSelectionsPlayer[1].getAttribute("data-value")
+      );
     }
     selectedFirst
       ? setClass(containerSelectionsPlayer[1], "outline-white")
