@@ -328,6 +328,11 @@ function fillSubmenu(
   elements.forEach((e) => {
     if (e.name != currentElement) {
       let span = document.createElement("span");
+      span.classList.add("flex");
+      span.classList.add("justify-center");
+      span.classList.add("align-center");
+      span.classList.add("pointer");
+      span.classList.add("max-width");
       span.setAttribute("data-value", e.name);
       let image = document.createElement("img");
       image.src = e.img;

@@ -71,14 +71,21 @@
   outline: 0.4vh solid;
 }
 
+.big-outline {
+  outline: 0.6vh solid;
+}
+
 .outline-white {
   outline-color: white;
+}
+
+.outline-space {
+  outline-color: #37425b;
 }
 
 .item-table {
   width: 11vh;
   height: 11vh;
-  outline: 0.6vh solid;
   border: 0.6vh solid black;
 }
 
@@ -183,9 +190,14 @@ body {
   font-family: "Poppins";
 }
 
+.icon-select {
+  width: 3.8vh;
+  height: 3.8vh;
+}
+
 .icon-menu {
-  width: 4vh;
-  height: 4vh;
+  width: 3.5vh;
+  height: 3.5vh;
 }
 
 .icon-table {
@@ -237,7 +249,7 @@ body {
   border-bottom-right-radius: 2vh;
 }
 
-#computer-photo{
+#computer-photo {
   background: no-repeat center/cover;
 }
 
@@ -254,7 +266,7 @@ body {
 }
 
 .player-name {
-  width: 14.9vh;
+  width: 15.2vh;
   height: 2.4vh;
   margin-top: 11.3vh;
   font-size: 1.25vh;
@@ -283,17 +295,19 @@ body {
 }
 
 #left-submenu {
-  margin-top: 7vh;
-  margin-right: 21.5vh;
-  height: 15.3vh;
+  margin-top: 5.4vh;
+  margin-right: 21.2vh;
+  height: 16vh;
   border-bottom-left-radius: 1vh;
+  border-top-left-radius: 1vh;
 }
 
 #right-submenu {
-  margin-top: 10vh;
+  margin-top: 8.4vh;
   margin-left: 23vh;
-  height: 12vh;
+  height: 13vh;
   border-bottom-right-radius: 1vh;
+  border-top-right-radius: 1vh;
 }
 
 .item-submenu-left {
@@ -302,8 +316,13 @@ body {
 }
 
 #right-submenu span {
-  height: 33.33%;
+  height: 35%;
   padding-left: 1vh;
+}
+
+.item-submenu-left:hover,
+#right-submenu span:hover {
+  background-color: #f0e6e5;
 }
 
 #cast-reaction {
