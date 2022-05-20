@@ -373,7 +373,7 @@ function resetCheckbox(...checkboxs) {
 
 window.onload = () => {
   if (!localStorage.getItem("difficulty")) {
-    localStorage.setItem("difficulty", "easy");
+    localStorage.setItem("difficulty", "normal");
     setClass(difficulties[0], "selected");
   } else {
     setClass(
