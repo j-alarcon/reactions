@@ -201,11 +201,6 @@ body {
   background: url("./../img/background/panel.svg") repeat-x center/cover;
 }
 
-.bottom-container-player-ui {
-  background-color: #f2ca4a;
-  height: 30vh;
-}
-
 .players-container {
   width: 23vh;
   height: 27vh;
