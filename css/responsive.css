@@ -1,7 +1,6 @@
 @media screen and (max-width: 900px){
     .background-space{
-        background-repeat: no-repeat;
-        background-position: 5% 40%;
+        background-position: 10% 30%;
         background-size: 60rem;
     }
 }

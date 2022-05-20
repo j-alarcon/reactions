@@ -23,8 +23,8 @@
 }
 
 .background-space {
+  background: url("../img/background/space.svg") center/cover;
   background-color: #37425b;
-  background-image: url("../img/background/space.svg");
 }
 
 .background-grey {
@@ -194,18 +194,19 @@ body {
 }
 
 .player-ui {
-  background: url("./../img/background/panel.svg") repeat-x center/cover;
+  background: url("./../img/background/panel.svg") repeat-x center;
+  background-size: 233vh 180vh;
 }
 
 .players-container {
   width: 23vh;
   height: 27vh;
-  margin-top: 16vh;
+  margin-top: 15vh;
 }
 
 .first-ui {
-  margin-bottom: 7.5vh;
-  height: 41vh;
+  margin-bottom: 3vh;
+  height: 45vh;
 }
 
 .life {
@@ -317,7 +318,7 @@ body {
 
 .table {
   height: 30vh;
-  margin-top: 7vh;
+  margin-top: 11vh;
 }
 
 .difficulties {
