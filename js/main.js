@@ -5,6 +5,7 @@ import {
   generateRandomName,
   generateRandomNumber,
   disableItems,
+  reproduceSound,
 } from "./utility.js";
 
 let selectedFirst;
@@ -267,6 +268,7 @@ function selectItem(
   containerSelected
 ) {
   item.addEventListener("click", () => {
+    reproduceSound("../sounds/pop2.mp3");
     submenusIcons.src = elements.find(
       (u) => u.name === item.getAttribute("data-value")
     ).img;
@@ -366,7 +368,8 @@ window.onload = () => {
     names,
     surnames
   );
-  document.getElementById("computer-photo").style.backgroundImage = "url('../img/portraits/" + generateRandomNumber(112) + ".jpg')";
+  document.getElementById("computer-photo").style.backgroundImage =
+    "url('../img/portraits/" + generateRandomNumber(112) + ".jpg')";
   disableItems(
     checkBox[1],
     document.getElementById("cast-reaction"),
@@ -386,6 +389,7 @@ difficulties.forEach((e) => {
 Array.from(checkBox).forEach((e, i) => {
   e.addEventListener("click", () => {
     showHideMenu(e, submenus[i]);
+    reproduceSound("../sounds/pop1.mp3");
   });
 });
 
@@ -418,6 +422,7 @@ options.forEach((e, i) => {
 });
 
 document.getElementById("cast-reaction").addEventListener("click", () => {
+  reproduceSound("../sounds/whoosh.mp3");
   // Get player reaction
   let playerReaction = getReaction(
     containerSelectionsPlayer[0].getAttribute("data-value"),

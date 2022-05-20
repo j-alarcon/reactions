@@ -194,6 +194,10 @@ export let surnames = [
   "Ito",
 ];
 
+export function reproduceSound(fileName){
+  new Audio(fileName).play();
+}
+
 export function disableItems(...items) {
   for (let i = 0; i < items.length; i++) {
     items[i].setAttribute("disabled", "disabled");
