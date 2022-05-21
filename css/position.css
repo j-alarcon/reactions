@@ -35,14 +35,14 @@
 }
 
 .photo,
-.life,
 .container-hp,
 .selections {
   z-index: 1;
 }
 
 .minus-percentage,
-#cast-reaction {
+#cast-reaction,
+.life {
   z-index: 2;
 }
 

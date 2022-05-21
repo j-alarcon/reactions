@@ -3,6 +3,11 @@
   width: 3.8vh;
 }
 
+.minus-percentage,
+.selections {
+  border-bottom-right-radius: 2vh;
+}
+
 .max-width {
   width: 100%;
 }
@@ -50,6 +55,10 @@
 
 .background-crimson {
   background-color: #b9182e;
+}
+
+.cast-reaction {
+  background: url("../img/logos/reactions.svg") no-repeat center/7vh;
 }
 
 .background-white {
@@ -229,7 +238,6 @@ body {
   width: 1.3vh;
   margin-top: 10.1%;
   margin-left: 9%;
-  z-index: 2;
   height: 62%;
 }
 
@@ -251,7 +259,6 @@ body {
   font-size: 1.4vh;
   margin-left: 3.2vh;
   margin-top: 2vh;
-  border-bottom-right-radius: 2vh;
 }
 
 #computer-photo {
@@ -281,7 +288,6 @@ body {
   height: 7vh;
   margin-left: 1.3vh;
   border-bottom-left-radius: 2vh;
-  border-bottom-right-radius: 2vh;
 }
 
 .option {
@@ -302,16 +308,14 @@ body {
   margin-top: 5.4vh;
   margin-right: 21.2vh;
   height: 16vh;
-  border-bottom-left-radius: 1vh;
-  border-top-left-radius: 1vh;
+  border-radius: 1vh 0 0 1vh;
 }
 
 #right-submenu {
   margin-top: 8.4vh;
   margin-left: 23vh;
   height: 13vh;
-  border-bottom-right-radius: 1vh;
-  border-top-right-radius: 1vh;
+  border-radius: 0 1vh 1vh 0;
 }
 
 .item-submenu-left {
@@ -334,9 +338,7 @@ body {
   height: 8vh;
   border-radius: 10vh;
   margin-left: 12vh;
-  background: url("../img/logos/reactions.svg") no-repeat center/7vh;
   border: 0.7vh solid #e25822;
-  background-color: white;
 }
 
 .table {
