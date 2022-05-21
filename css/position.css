@@ -35,18 +35,19 @@
 }
 
 .photo,
-.container-hp,
 .selections {
   z-index: 1;
 }
 
 .minus-percentage,
 #cast-reaction,
-.life {
+.life,
+.lost-life {
   z-index: 2;
 }
 
-.difficulties {
+.difficulties,
+.container-hp {
   z-index: 3;
 }
 

@@ -6,41 +6,46 @@ import {
   generateRandomNumber,
   disableItems,
   reproduceSound,
+  setClass,
+  addClass,
 } from "./utility.js";
 
+// It is utilised to know when user does his first choice
 let selectedFirst;
 
-let options = [
-  document.getElementsByClassName("item-submenu-left"),
-  document.getElementsByClassName("item-submenu-right"),
-];
+// Items contained in first submenu at the left
+let options = [document.getElementsByClassName("item-submenu-left")];
 
+// Boxes that contains computer's choices.
 let containerSelectionsComputer = [
   document.getElementsByClassName("option")[0],
   document.getElementsByClassName("option")[1],
 ];
 
+// Checkboxs that allow the user to choice elements.
+let containerSelectionsPlayer = [
+  document.getElementsByClassName("option")[2],
+  document.getElementsByClassName("option")[3],
+];
+
+let checkBox = document.getElementsByClassName("checkbox");
+
+// Images of choices done by computer
 let submenusIconsComputer = [
   document.getElementById("panel-element-left-computer"),
   document.getElementById("panel-element-right-computer"),
 ];
 
-let containerSelectionsPlayer = [
-  document.getElementsByClassName("option")[2],
-  document.getElementsByClassName("option")[3],
+// Images of choices done by player
+let submenusIcons = [
+  document.getElementById("panel-element-left-player"),
+  document.getElementById("panel-element-right-player"),
 ];
 
 let submenus = [
   document.getElementById("left-submenu"),
   document.getElementById("right-submenu"),
 ];
-
-let submenusIcons = [
-  document.getElementById("panel-element-left-player"),
-  document.getElementById("panel-element-right-player"),
-];
-
-let checkBox = document.getElementsByClassName("checkbox");
 
 let difficulties = Array.from(document.getElementsByClassName("difficulty"));
 
@@ -151,20 +156,34 @@ function getReaction(element1, element2, reactions) {
 }
 
 function changeDifficulty(currentElement) {
+  // Returns original color to previous selected difficulty
   setClass(
     document.getElementById(localStorage.getItem("difficulty")),
     localStorage.getItem("difficulty")
   );
+
+  // Change current difficulty and reload
   localStorage.setItem("difficulty", currentElement.id);
   setClass(currentElement, "selected");
   window.location.reload();
 }
 
+// Fill positions of array until both elements are differents between them.
+function computerGenerateReaction(values, elements) {
+  do {
+    values[0] = elements[Math.floor(Math.random() * 4)];
+    values[1] = elements[Math.floor(Math.random() * 4)];
+  } while (values[0] === values[1]);
+  return values;
+}
+
 function computerPlay(elements, difficulty, playerReaction) {
   let values = [];
+  // Computer let you win
   switch (difficulty) {
     case "easy":
       for (let i = 0; i < 2; i++) {
+        // Obtain advantages objects of current player's reaction
         values.push(
           elements.find(
             (z) =>
@@ -176,18 +195,16 @@ function computerPlay(elements, difficulty, playerReaction) {
         );
       }
       break;
+
+    // The match will be fair for both sides
     case "normal":
-      do {
-        values[0] = elements[Math.floor(Math.random() * 4)];
-        values[1] = elements[Math.floor(Math.random() * 4)];
-      } while (values[0] === values[1]);
+      values = computerGenerateReaction(values, elements);
       break;
+
+    // There is a 40% that computer will know player's reaction and send a weaknesses
     case "hard":
       if (Math.round(Math.random() * 10 > 4)) {
-        do {
-          values[0] = elements[Math.floor(Math.random() * 4)];
-          values[1] = elements[Math.floor(Math.random() * 4)];
-        } while (values[0] === values[1]);
+        values = computerGenerateReaction(values, elements);
       } else {
         for (let i = 0; i < 2; i++) {
           values.push(
@@ -206,19 +223,24 @@ function computerPlay(elements, difficulty, playerReaction) {
   return values;
 }
 
+// According to receive reactions change life % and end the game
 function playRound(selections, lives, yourReaction, computerReaction) {
   document.getElementById("minus-percentage-computer").innerText =
     "-" + calculatePercentage(computerReaction, yourReaction) + "%";
   document.getElementById("minus-percentage-player").innerText =
     "-" + calculatePercentage(yourReaction, computerReaction) + "%";
+
   lives[0].innerText -= calculatePercentage(computerReaction, yourReaction);
   lives[1].innerText -= calculatePercentage(yourReaction, computerReaction);
+
   for (let i = 0; i < lives.length; i++) {
     percentageLife[i].style.height = 100 - lives[i].innerText + "%";
   }
+
   endGame(lives, selections);
 }
 
+// Disable buttons and show reset
 function endGame(lives, selections) {
   for (let i = 0; i < lives.length; i++) {
     if (lives[i].innerText < 1) {
@@ -239,12 +261,15 @@ function endGame(lives, selections) {
 // You will receive a percentage to apply to the first element and also default ones
 function calculatePercentage(primaryReaction, secondaryReaction) {
   for (let i in primaryReaction.weaknesses) {
+    // Percentage according to data storaged in objects
     if (primaryReaction.weaknesses[i].name === secondaryReaction.getName) {
       return primaryReaction.weaknesses[i].percentage;
     }
   }
+  // Percentage if both reactions are the same
   if (primaryReaction.getName === secondaryReaction.getName) {
     return 3;
+    // Default percentage
   } else {
     return 6;
   }
@@ -254,13 +279,6 @@ function activateItems(...items) {
   for (let i = 0; i < items.length; i++) {
     items[i].removeAttribute("disabled");
   }
-}
-
-function setClass(containerSelected, className) {
-  containerSelected.classList.remove(
-    containerSelected.classList[containerSelected.classList.length - 1]
-  );
-  containerSelected.classList.add(className);
 }
 
 function selectItem(
@@ -273,6 +291,8 @@ function selectItem(
 ) {
   item.addEventListener("click", () => {
     reproduceSound("./sounds/pop2.mp3");
+
+    // Change image and attribute according to selected element
     selectedSubmenuIcon.src = elements.find(
       (u) => u.name === item.getAttribute("data-value")
     ).img;
@@ -280,6 +300,8 @@ function selectItem(
       "data-value",
       item.getAttribute("data-value")
     );
+
+    // If both selections are the same, the second is changed to the first element in second submenu
     if (
       containerSelectionsPlayer[0].getAttribute("data-value") ===
       containerSelectionsPlayer[1].getAttribute("data-value")
@@ -294,13 +316,18 @@ function selectItem(
         containerSelectionsPlayer[1].getAttribute("data-value")
       );
     }
+    // If it is the first time that one element is selected, the default blink animation will be deleted
     selectedFirst
       ? setClass(containerSelectionsPlayer[1], "outline-white")
       : setClass(containerSelected, item.getAttribute("data-value"));
     resetMenu(submenus, checkbox);
+
+    // If the first element is selected, the reaction icon will lose his sepia filter and locked items will be activated
     if (containerSelectionsPlayer[1].getAttribute("data-value")) {
       activateItems(checkBox[1], document.getElementById("cast-reaction"));
-      setClass(document.getElementById("cast-reaction"), "no-filter");
+      document.getElementById("cast-reaction").classList.add("no-filter");
+
+      // We generate a reaction and try to show it in his panel
       let reaction = getReaction(
         containerSelectionsPlayer[0].getAttribute("data-value"),
         containerSelectionsPlayer[1].getAttribute("data-value"),
@@ -315,6 +342,7 @@ function selectItem(
   });
 }
 
+// It is used to fill the second submenu each time we select a element in the first one
 function fillSubmenu(
   currentElement,
   elements,
@@ -323,9 +351,11 @@ function fillSubmenu(
   checkbox,
   containerSelected
 ) {
+  // Reset second submenu
   activateItems(checkBox[1]);
   container[1].innerHTML = "";
 
+  // Delete red border in second selector because now it's not empty.
   if (selectedFirst) {
     setClass(containerSelected, "outline-white");
     selectedFirst = false;
@@ -333,18 +363,25 @@ function fillSubmenu(
 
   elements.forEach((e) => {
     if (e.name != currentElement) {
+      // Create three differents options from current selected element
       let span = document.createElement("span");
-      span.classList.add("flex");
-      span.classList.add("justify-center");
-      span.classList.add("align-center");
-      span.classList.add("pointer");
-      span.classList.add("max-width");
+      addClass(
+        span,
+        "flex",
+        "justify-center",
+        "align-center",
+        "pointer",
+        "max-width"
+      );
       span.setAttribute("data-value", e.name);
+
       let image = document.createElement("img");
       image.src = e.img;
       image.alt = e.name;
       image.classList.add("icon-menu");
       span.appendChild(image);
+
+      // Allow to add events to these new options
       selectItem(
         span,
         submenusIcons,
@@ -353,6 +390,7 @@ function fillSubmenu(
         checkbox,
         containerSelected
       );
+
       container[1].appendChild(span);
     }
   });
@@ -378,27 +416,36 @@ function resetCheckbox(...checkboxs) {
 }
 
 window.onload = () => {
+  // If there is no localStorage data, we assign normal difficulty by default and also add selected class to CSS
   if (!localStorage.getItem("difficulty")) {
     localStorage.setItem("difficulty", "normal");
     setClass(difficulties[0], "selected");
   } else {
+    // If there was one difficulty selected before, we just refresh his style
     setClass(
       document.getElementById(localStorage.getItem("difficulty")),
       "selected"
     );
   }
+
+  // Generate a random name to your rival
   document.getElementById("cpu-name").innerText = generateRandomName(
     names,
     surnames
   );
+
+  // Select a random image to your rival
   document.getElementById("computer-photo").style.backgroundImage =
     "url('./img/portraits/" + generateRandomNumber(112) + ".jpg')";
+
   disableItems(
     checkBox[1],
     document.getElementById("cast-reaction"),
     document.getElementById("reset")
   );
+
   resetCheckbox(...checkBox);
+
   selectedFirst = true;
 };
 
@@ -446,12 +493,14 @@ options.forEach((e, i) => {
 
 document.getElementById("cast-reaction").addEventListener("click", () => {
   reproduceSound("./sounds/whoosh.mp3");
+
   // Get player reaction
   let playerReaction = getReaction(
     containerSelectionsPlayer[0].getAttribute("data-value"),
     containerSelectionsPlayer[1].getAttribute("data-value"),
     reactions
   );
+
   // Get computer elements selected
   let computerElements = [];
   computerPlay(
@@ -459,12 +508,16 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
     localStorage.getItem("difficulty"),
     playerReaction
   ).forEach((e, i) => {
+    // Define images and styles to elements according to generated reaction
     submenusIconsComputer[i].src = e.img;
     setClass(containerSelectionsComputer[i], e.name);
+    // Save names of each element selected by computer to use this against player
     computerElements.push(e.name);
   });
-  // Get computer reaction
+
+  // Get computer reaction according to array generated before
   let computerReaction = getReaction(...computerElements, reactions);
+  // Again define styles and images, but in this case to reaction, not to elements
   document.getElementById("result-reaction-computer").src =
     computerReaction.getImg;
   setClass(
@@ -472,6 +525,7 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
     computerReaction.getName
   );
 
+  // When at least one round has started percentages container will be displayed
   Array.from(document.getElementsByClassName("minus-percentage")).forEach(
     (e) => {
       e.classList.remove("hidden");
@@ -481,6 +535,6 @@ document.getElementById("cast-reaction").addEventListener("click", () => {
   playRound(checkBox, lives, playerReaction, computerReaction);
 });
 
-document.getElementById("reset").addEventListener("click", (e) => {
+document.getElementById("reset").addEventListener("click", () => {
   window.location.reload();
 });

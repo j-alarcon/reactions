@@ -216,3 +216,17 @@ export function generateRandomNumber(maxNumber) {
   // Ceil use is intended to don't get a 0
   return Math.ceil(Math.random() * maxNumber);
 }
+
+
+// Delete last class of item and add a new one in his place
+export function setClass(containerSelected, className) {
+  containerSelected.classList.remove(
+    containerSelected.classList[containerSelected.classList.length - 1]
+  );
+  containerSelected.classList.add(className);
+}
+
+// Add to a single element a lot of classes or a single one
+export function addClass(element, ...classes){
+  classes.forEach((e, i) => element.classList.add(classes[i]))
+}

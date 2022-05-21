@@ -24,8 +24,8 @@
         <div class="players-container reverse flex direction-column justify-center align-center">
           <div class="relative">
             <div class="minus-percentage text-white text-shadow absolute background-crimson white-text outline outline-white hidden" id="minus-percentage-computer"></div>
-            <div class="life background-green outline outline-white absolute">
-              <div class="lost-life background-red"></div>
+            <div class="life background-green outline outline-white absolute overflow-hidden">
+              <div class="lost-life absolute background-red max-width"></div>
             </div>
             <div class="photo border-white relative" id="computer-photo">
               <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center outline outline-white absolute" id="computer-hp">100</span>
@@ -58,7 +58,7 @@
           <div class="relative">
             <div class="minus-percentage text-white text-shadow bold absolute background-crimson outline outline-white hidden" id="minus-percentage-player"></div>
             <div class="life background-green outline outline-white absolute">
-              <div class="lost-life background-red"></div>
+              <div class="lost-life absolute background-red max-width"></div>
             </div>
             <div class="photo border-white relative" id="player-photo">
               <button disabled class="flex absolute active grayscale pointer cast-reaction background-white" id="cast-reaction"></button>
