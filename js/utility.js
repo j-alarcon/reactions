@@ -204,6 +204,7 @@ export function disableItems(...items) {
 }
 
 export function generateRandomName(name, surname) {
+  // Floor use is intended to don't get out of index of array
   return (
     name[Math.floor(Math.random() * name.length)] +
     " " +
@@ -212,5 +213,6 @@ export function generateRandomName(name, surname) {
 }
 
 export function generateRandomNumber(maxNumber) {
+  // Ceil use is intended to don't get a 0
   return Math.ceil(Math.random() * maxNumber);
 }
