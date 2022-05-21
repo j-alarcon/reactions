@@ -90,7 +90,7 @@ There are two ways to see my work:
     <li>
         <em>I want to see it right now:</em>
         <ol>
-            <li>Just click in this link: <strong>https://j-alarcon.github.io/reactions/</strong></li>
+            <li>Just click in this link: https://j-alarcon.github.io/reactions/</li>
             <li>Or you can find the link in the environments category at your right by clicking view deployment inside this one <strong>(You need a Github's account)</strong>.</li>
         </ol>
     </li>
