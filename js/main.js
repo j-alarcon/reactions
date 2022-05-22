@@ -10,6 +10,13 @@ import {
   addClass,
 } from "./utility.js";
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./js/sw.js")
+    .then((reg) => console.log("SUCCESS", reg))
+    .catch(err => console.warm("ERROR", err));
+}
+
 // It is utilised to know when user does his first choice
 let selectedFirst;
 
