@@ -440,7 +440,7 @@ window.onload = () => {
 
   // Select a random image to your rival
   document.getElementById("computer-photo").style.backgroundImage =
-    "url('./img/portraits/" + generateRandomNumber(112) + ".jpg')";
+    "url('./img/portraits/" + generateRandomNumber(50) + ".jpg')";
 
   disableItems(
     checkBox[1],
