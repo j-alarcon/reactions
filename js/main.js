@@ -12,9 +12,9 @@ import {
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("./js/sw.js")
-    .then((reg) => console.log("SUCCESS", reg))
-    .catch(err => console.warm("ERROR", err));
+    .register("./sw.js")
+    .then((reg) => console.log("Service-worker was succesfully registered", reg))
+    .catch(err => console.warm("Error: Service-worker was not registered", err));
 }
 
 // It is utilised to know when user does his first choice

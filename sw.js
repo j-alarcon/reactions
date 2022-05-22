@@ -154,3 +154,45 @@ const CACHE_NAME = "reactions_v1.0",
     "./sounds/whoosh.mp3",
     "./index.html",
   ];
+
+// Storage all the files in cache
+self.addEventListener("install", (e) => {
+  e.waitUntil(
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => {
+        return cache.addAll(urlsToCache).then(() => self.skipWaiting());
+      })
+      .catch((err) => console.log("Error when trying to register cache", err))
+  );
+});
+
+// Look for resources to work without connection
+self.addEventListener("activate", (e) => {
+  const CACHE_WHITELIST = [CACHE_NAME];
+  e.waitUntil(
+    caches.keys().then((cacheNames) => {
+      cacheNames.map((cacheName) => {
+        // Delete useless data in cache
+        if (CACHE_WHITELIST.indexOf(cacheName) === -1) {
+          return caches.delete(cacheName);
+        }
+      });
+    })
+    .then(() => self.clients.claim())
+  );
+});
+
+// If there are any connection and detect new changes will refresh everything
+self.addEventListener("fetch", (e) => {
+    e.respondWith(
+        caches.match(e.request)
+        .then(res => {
+            if(res) {
+                // Recover data from cache
+                return res;
+            }
+            return fetch(e.request);
+        })
+    )
+});
