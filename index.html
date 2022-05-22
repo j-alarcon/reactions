@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Strategic game in which you can combine elements to generate differents reactions" />
+    <meta name="google" content="notranslate" />
     <meta name="theme-color" content="#161618" />
     <meta name="MobileOptimized" content="width" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="google" content="notranslate" />
     <title>Reactions - Let's react! 🧪</title>
     <link rel="apple-touch-icon" href="./img/logos/favicon.svg" />
     <link rel="apple-touch-icon-precomposed" href="./img/logos/favicon.svg" />
@@ -71,7 +72,7 @@
               <div class="lost-life absolute background-red max-width"></div>
             </div>
             <div class="photo border-white relative" id="player-photo">
-              <button disabled class="flex absolute active grayscale pointer cast-reaction background-white" id="cast-reaction"></button>
+              <button disabled class="flex absolute active grayscale pointer cast-reaction background-white" id="cast-reaction" aria-label="cast-reaction"></button>
               <span class="container-hp background-darkblue text-white text-shadow bold flex justify-center align-center outline outline-white absolute" id="player-hp">100</span>
               <span class="player-name background-white flex justify-end align-center bold">You</span>
             </div>
@@ -97,13 +98,13 @@
               <span class="flex justify-center align-center max-width pointer" >
                 <img id="panel-element-left-player" class="icon-select" src="" alt="">
               </span>
-              <input type="checkbox" class="checkbox pointer absolute invisible">
+              <input type="checkbox" id="left-panel" class="checkbox pointer absolute invisible">
             </div>
             <div class="option outline flex justify-center align-center block">
               <span class="flex justify-center align-center max-width pointer" >
                 <img id="panel-element-right-player" class="icon-select" src="" alt="">
               </span>
-              <input type="checkbox" class="checkbox pointer absolute invisible">
+              <input type="checkbox" id="right-panel" class="checkbox pointer absolute invisible">
             </div>
             <div class="option outline flex justify-center align-center unselected hide">
               <span id="reset" class="flex justify-center align-center max-width pointer" >
