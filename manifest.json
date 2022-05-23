@@ -1,21 +1,14 @@
 {
   "name": "Reactions",
   "short_name": "Reactions",
-  "description": "Strategic game in which you can combine elements to generate differents reactions", 
+  "description": "Strategic game in which you can combine elements to generate differents reactions",
   "developer": {
     "name": "Javier Alarcón",
     "url": "https://github.com/j-alarcon"
   },
   "version": "1.0",
   "categories": ["games", "entertainment", "strategy"],
-  "screenshots": [
-    {
-      "src": "ruta",
-      "sizes": "1920x1080",
-      "platform": "narrow",
-      "label": "Homescreen blabla doing blabla"
-    }
-  ],
+  "screenshots": [],
   "lang": "en",
   "start_url": "./index.html",
   "scope": "./",
@@ -73,6 +66,6 @@
       "src": "./img/logos/pwa/reactions_icon_512x512.png",
       "sizes": "512x512",
       "type": "image/png"
-    }   
+    }
   ]
 }
