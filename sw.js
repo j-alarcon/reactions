@@ -12,9 +12,6 @@ const appShellFiles = [
   "./css/reset.css",
   "./css/responsive.css",
   "./fonts/poppins.ttf",
-  "./sounds/pop1.mp3",
-  "./sounds/pop2.mp3",
-  "./sounds/whoosh.mp3",
   "./img/background/panel.svg",
   "./img/background/space.svg",
   "./img/icons/blizzard.svg",
@@ -62,7 +59,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     (async () => {
       const cache = await caches.open(cacheName);
-      await cache.addAll(contentToCache).catch(console.log(""));
+      await cache.addAll(contentToCache);
     })()
   );
 });
@@ -88,9 +85,9 @@ self.addEventListener("fetch", (e) => {
     (async () => {
       const r = await caches.match(e.request);
       if (r) return r;
-      const response = await fetch(e.request).catch(console.log(""));
+      const response = await fetch(e.request);
       const cache = await caches.open(cacheName);
-      cache.put(e.request, response.clone()).catch(console.log("")).catch(console.log(""));
+      cache.put(e.request, response.clone());
       return response;
     })()
   );
