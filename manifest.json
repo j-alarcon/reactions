@@ -12,14 +12,14 @@
     {
       "src": "./img/pwa/screenshots/start_computer.webp",
       "sizes": "1920x998",
-      "type": "image/jpg",
+      "type": "image/webp",
       "platform": "wide",
       "label": "Start of application"
     },
     {
       "src": "./img/pwa/screenshots/battle_computer.webp",
       "sizes": "1920x998",
-      "type": "image/jpg",
+      "type": "image/webp",
       "platform": "wide",
       "label": "Battle between the two players"
     },
@@ -33,21 +33,21 @@
     {
       "src": "./img/pwa/screenshots/start_mobile.webp",
       "sizes": "720x1435",
-      "type": "image/jpg",
+      "type": "image/webp",
       "platform": "narrow",
       "label": "Start of application"
     },
     {
       "src": "./img/pwa/screenshots/battle_mobile.webp",
       "sizes": "720x1435",
-      "type": "image/jpg",
+      "type": "image/webp",
       "platform": "narrow",
       "label": "Battle between the two players"
     },
     {
       "src": "./img/pwa/screenshots/finish_mobile.webp",
       "sizes": "720x1435",
-      "type": "image/jpg",
+      "type": "image/webp",
       "platform": "narrow",
       "label": "Finish of the match"
     }
