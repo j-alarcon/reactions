@@ -266,7 +266,7 @@ body {
 }
 
 #player-photo {
-  background: url("./../img/portraits/default.jpg") no-repeat center/cover;
+  background: url("./../img/portraits/default.webp") no-repeat center/cover;
 }
 
 .photo {

@@ -10,9 +10,10 @@ import {
   addClass,
 } from "./utility.js";
 
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
-};
+// Register the service worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+}
 
 // It is utilised to know when user does his first choice
 let selectedFirst;
@@ -440,7 +441,7 @@ window.onload = () => {
 
   // Select a random image to your rival
   document.getElementById("computer-photo").style.backgroundImage =
-    "url('./img/portraits/" + generateRandomNumber(50) + ".jpg')";
+    "url('./img/portraits/" + generateRandomNumber(50) + ".webp')";
 
   disableItems(
     checkBox[1],

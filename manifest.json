@@ -7,6 +7,8 @@
     "url": "https://github.com/j-alarcon"
   },
   "version": "1.0",
+  "categories": ["games", "entertainment", "strategy"],
+  "screenshots": [],
   "lang": "en",
   "start_url": "./index.html",
   "scope": "./",
@@ -63,7 +65,8 @@
     {
       "src": "./img/logos/pwa/reactions_icon_512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
-    }
+      "type": "image/png",
+      "purpose": "any"
+    }   
   ]
 }

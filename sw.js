@@ -3,6 +3,8 @@ const cacheName = "reactions_v1.0";
 
 // All the files we want to storage in cache to work offline
 const appShellFiles = [
+  "./",
+  "./index.html",
   "./css/animation.css",
   "./css/fonts.css",
   "./css/main.css",
@@ -41,16 +43,15 @@ const appShellFiles = [
   "./sounds/pop1.mp3",
   "./sounds/pop2.mp3",
   "./sounds/whoosh.mp3",
-  "./index.html",
   "./img/portraits/default.jpg",
 ];
 
-function addImagesToArray(array, totalNumber){
+function addImagesToArray(array, totalNumber) {
   const portraits = [];
   for (let i = 1; i <= totalNumber; i++) {
-    portraits.push("./img/portraits/" + i + ".jpg");
+    portraits.push("./img/portraits/" + i + ".webp");
   }
-  return array.concat(portraits)
+  return array.concat(portraits);
 }
 
 // Merge of images to current cache storage
@@ -72,9 +73,11 @@ self.addEventListener("fetch", (e) => {
     (async () => {
       const r = await caches.match(e.request);
       if (r) return r;
-      const response = await fetch(e.request);
+      const response = await fetch(e.request).catch(() =>
+        console.log("You are offline")
+      );
       const cache = await caches.open(cacheName);
-      cache.put(e.request, response.clone());
+      if (response) cache.put(e.request, response.clone());
       return response;
     })()
   );
