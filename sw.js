@@ -68,18 +68,19 @@ self.addEventListener("install", (e) => {
 });
 
 // Delete old cache
-self.addEventListener('activate', (e) => {
+self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys().then((keyList) => {
-          return Promise.all(keyList.map((key) => {
-        if(key !== cacheName) {
-          return caches.delete(key);
-        }
-      }));
+      return Promise.all(
+        keyList.map((key) => {
+          if (key !== cacheName) {
+            return caches.delete(key);
+          }
+        })
+      );
     })
   );
 });
-
 
 // Fetching all data
 self.addEventListener("fetch", (e) => {
@@ -89,9 +90,8 @@ self.addEventListener("fetch", (e) => {
       if (r) return r;
       const response = await fetch(e.request).catch(console.log(""));
       const cache = await caches.open(cacheName);
-      cache.put(e.request, response.clone()).catch(console.log(""));
+      cache.put(e.request, response.clone()).catch(console.log("")).catch(console.log(""));
       return response;
     })()
   );
 });
-
