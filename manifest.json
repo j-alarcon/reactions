@@ -8,7 +8,14 @@
   },
   "version": "1.0",
   "categories": ["games", "entertainment", "strategy"],
-  "screenshots": [],
+  "screenshots": [
+    {
+      "src": "ruta",
+      "sizes": "1920x1080",
+      "platform": "narrow",
+      "label": "Homescreen blabla doing blabla"
+    }
+  ],
   "lang": "en",
   "start_url": "./index.html",
   "scope": "./",

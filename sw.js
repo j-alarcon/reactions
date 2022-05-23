@@ -43,7 +43,7 @@ const appShellFiles = [
   "./sounds/pop1.mp3",
   "./sounds/pop2.mp3",
   "./sounds/whoosh.mp3",
-  "./img/portraits/default.jpg",
+  "./img/portraits/default.webp",
 ];
 
 function addImagesToArray(array, totalNumber) {
