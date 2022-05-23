@@ -62,7 +62,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     (async () => {
       const cache = await caches.open(cacheName);
-      await cache.addAll(contentToCache).catch();
+      await cache.addAll(contentToCache).catch("");
     })()
   );
 });
@@ -73,9 +73,9 @@ self.addEventListener("fetch", (e) => {
     (async () => {
       const r = await caches.match(e.request);
       if (r) return r;
-      const response = await fetch(e.request).catch();
+      const response = await fetch(e.request).catch("");
       const cache = await caches.open(cacheName);
-      cache.put(e.request, response.clone()).catch();
+      cache.put(e.request, response.clone()).catch("");
       return response;
     })()
   );
