@@ -12,6 +12,9 @@ const appShellFiles = [
   "./css/reset.css",
   "./css/responsive.css",
   "./fonts/poppins.ttf",
+  "./sounds/pop1.mp3",
+  "./sounds/pop2.mp3",
+  "./sounds/whoosh.mp3",
   "./img/background/panel.svg",
   "./img/background/space.svg",
   "./img/icons/blizzard.svg",
@@ -40,9 +43,6 @@ const appShellFiles = [
   "./js/main.js",
   "./js/model.js",
   "./js/utility.js",
-  "./sounds/pop1.mp3",
-  "./sounds/pop2.mp3",
-  "./sounds/whoosh.mp3",
   "./img/portraits/default.webp",
 ];
 
@@ -67,6 +67,20 @@ self.addEventListener("install", (e) => {
   );
 });
 
+// Delete old cache
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keyList) => {
+          return Promise.all(keyList.map((key) => {
+        if(key !== cacheName) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+});
+
+
 // Fetching all data
 self.addEventListener("fetch", (e) => {
   e.respondWith(
@@ -81,15 +95,3 @@ self.addEventListener("fetch", (e) => {
   );
 });
 
-// Delete old cache
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then((keyList) => {
-          return Promise.all(keyList.map((key) => {
-        if(key !== cacheName) {
-          return caches.delete(key);
-        }
-      }));
-    })
-  );
-});
