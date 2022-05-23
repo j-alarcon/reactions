@@ -65,8 +65,7 @@
     {
       "src": "./img/logos/pwa/reactions_icon_512x512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     }   
   ]
 }

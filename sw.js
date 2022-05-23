@@ -62,7 +62,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     (async () => {
       const cache = await caches.open(cacheName);
-      await cache.addAll(contentToCache);
+      await cache.addAll(contentToCache).catch(() => console.log("PRUEBA 1"));
     })()
   );
 });
@@ -77,8 +77,21 @@ self.addEventListener("fetch", (e) => {
         console.log("You are offline")
       );
       const cache = await caches.open(cacheName);
-      if (response) cache.put(e.request, response.clone());
+      cache.put(e.request, response.clone()).catch(() => console.log("PRUEBA 2"));
       return response;
     })()
+  );
+});
+
+// Delete old cache
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keyList) => {
+          return Promise.all(keyList.map((key) => {
+        if(key !== cacheName) {
+          return caches.delete(key);
+        }
+      }));
+    })
   );
 });
