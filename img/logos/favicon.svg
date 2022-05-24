@@ -8,7 +8,7 @@
    version="1.1"
    id="svg87582"
    inkscape:version="1.1.2 (1:1.1+202202050950+0a00cf5339)"
-   sodipodi:docname="reactions-mobile.svg"
+   sodipodi:docname="favicon.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,13 +25,13 @@
      showgrid="false"
      width="1920px"
      units="px"
-     inkscape:zoom="0.70637021"
-     inkscape:cx="-208.81402"
-     inkscape:cy="224.38659"
+     inkscape:zoom="1.4127404"
+     inkscape:cx="252.34643"
+     inkscape:cy="140.15314"
      inkscape:window-width="1920"
-     inkscape:window-height="976"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-height="949"
+     inkscape:window-x="1920"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -41,19 +41,18 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g87177"
-       transform="matrix(0.26458333,0,0,0.26458333,-149.66547,-98.451334)">
+       id="g1606">
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.84779;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.753478;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect86355"
-         width="294.35107"
-         height="268.30356"
-         x="573.55042"
-         y="381.97635"
-         ry="67.305435" />
+         width="77.880386"
+         height="70.988647"
+         x="2.0864086"
+         y="2.6132405"
+         ry="17.807896" />
       <g
          id="g85218"
-         transform="translate(151.84572,53.229171)">
+         transform="matrix(0.25049154,0,0,0.25049154,-101.88348,-77.410032)">
         <g
            id="g82709"
            transform="translate(-1.8093089,13.266534)">
