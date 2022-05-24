@@ -97,8 +97,8 @@
       "purpose": "maskable"
     },
     {
-      "src": "./img/pwa/icons/reactions_icon_144x131.png",
-      "sizes": "144x131",
+      "src": "./img/pwa/icons/reactions_icon_144x144.png",
+      "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     },
