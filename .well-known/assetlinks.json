@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "reactions.game.twa",
+                     "sha256_cert_fingerprints": ["B8:54:8A:3C:2E:8C:F5:58:46:68:C3:9D:67:81:DF:8C:61:53:11:74:67:E0:F2:7B:55:15:F6:F4:29:B7:DE:42"] }
+      }
+]
