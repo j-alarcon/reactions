@@ -60,7 +60,7 @@ function addImagesToArray(array, totalNumber) {
 }
 
 // Merge of images to current cache storage
-const contentToCache = addImagesToArray(appShellFiles, 50);
+const contentToCache = addImagesToArray(appShellFiles, 25);
 
 // Installation of service-workers
 self.addEventListener("install", (e) => {
