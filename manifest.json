@@ -97,9 +97,9 @@
       "purpose": "maskable"
     },
     {
-      "src": "./img/pwa/icons/reactions_icon_144x144.webp",
+      "src": "./img/pwa/icons/reactions_icon_144x144.png",
       "sizes": "144x144",
-      "type": "image/webp",
+      "type": "image/png",
       "purpose": "any"
     },
     {
@@ -121,7 +121,7 @@
       "purpose": "maskable"
     },
     {
-      "src": "./img/pwa/icons/reactions_icon_384x384.png",
+      "src": "./img/pwa/icons/reactions_icon_512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

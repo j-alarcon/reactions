@@ -33,7 +33,7 @@ const appShellFiles = [
   "./img/pwa/icons/reactions_icon_72x72.webp",
   "./img/pwa/icons/reactions_icon_96x96.webp",
   "./img/pwa/icons/reactions_icon_128x128.webp",
-  "./img/pwa/icons/reactions_icon_144x144.webp",
+  "./img/pwa/icons/reactions_icon_144x144.png",
   "./img/pwa/icons/reactions_icon_192x192.webp",
   "./img/pwa/icons/reactions_icon_256x256.webp",
   "./img/pwa/icons/reactions_icon_384x384.png",
